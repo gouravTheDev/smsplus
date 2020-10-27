@@ -85,8 +85,8 @@
                     <div class="text-center mb-3">
                         <img src="/assets/images/logo.png" height="120" width="auto">
                     </div>
-                    <h3 class="mb-1 pb-0 text-center font-weight-bold">Registration Form</h3>
-                    <p class="mb-2 text-center" style="margin-bottom: 20px; margin-top: 10px;">Create your free account today.</p>
+                    <h3 class="mb-0 pb-0 text-center font-weight-bold">Registration Form</h3>
+                    <p class="mb-2 text-center" style="margin-bottom: 20px; margin-top: 10px; font-size: 1.2em;">Create your free account today.</p>
                     <form method="POST">
                     	<!-- <input type="hidden" name="formName" value="signUpForm">
 						<input type="hidden" name="s_Hash" value="<?php echo $_SESSION['s_Hash']; ?>"> -->
