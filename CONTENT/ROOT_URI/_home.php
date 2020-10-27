@@ -1,4 +1,4 @@
-<title>Social My Social</title>
+<title>SocialMySocial+</title>
 <meta content="" name="descriptison">
 <meta content="" name="keywords">
 
@@ -71,26 +71,26 @@
 
         <div class="row">
           <div class="col-md-4 col-sm-12 mb-3" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box shadow">
-              <div class="icon"><img src="assets/icons/or-make.svg" width="auto" class="img-fluid" alt=""></div>
-              <h6 class="font-weight-bold">An Order is Made every</h6>
-              <h4 style="color: #06213C;">0.14 SEC</h4>
+            <div class="icon-box shadow" style="background: rgba(0, 0, 0, 0.7); color: #fff; border: none;">
+              <div><img src="assets/icons/worldwide.png" width="auto" class="img-fluid" alt="" style="height: 100px; margin-bottom: 20px; "></div>
+              <h6 class="font-weight-bold" style="font-size: 1.3em;">An Order is Made every</h6>
+              <h4 style="font-size: 1.6em;">0.14 SEC</h4>
             </div>
           </div>
 
           <div class="col-md-4 col-sm-12 mb-3" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box shadow">
-              <div class="icon"><img src="assets/icons/order.svg" width="auto" class="img-fluid" alt=""></div>
-              <h6 class="font-weight-bold">Orders Completed</h6>
-              <h4 style="color: #D61711;">43431459</h4>
+            <div class="icon-box shadow" style="background: rgba(0, 0, 0, 0.7); color: #fff; border: none;">
+              <div><img src="assets/icons/network.png" width="auto" class="img-fluid" alt="" style="height: 100px; margin-bottom: 20px; "></div>
+              <h6 class="font-weight-bold" style="font-size: 1.3em;">Orders Completed</h6> 
+              <h4 style="font-size: 1.6em;">43431459</h4>
             </div>
           </div>
 
           <div class="col-md-4 col-sm-12 mb-3" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box shadow">
-              <div class="icon"><img src="assets/icons/low-price.svg" width="auto" class="img-fluid" alt=""></div>
-              <h6 class="font-weight-bold">Price Starting from</h6>
-              <h4 style="color: #06504C;">$0.01/1K</h4>
+            <div class="icon-box shadow" style="background: rgba(0, 0, 0, 0.7); color: #fff; border: none;">
+              <div class=""><img src="assets/icons/notification.png" width="auto" class="img-fluid" alt="" style="height: 100px; margin-bottom: 20px; "></div>
+              <h6 class="font-weight-bold" style="font-size: 1.3em;">Price Starting from</h6>
+              <h4 style="font-size: 1.6em;">$0.01/1K</h4>
             </div>
           </div>
 

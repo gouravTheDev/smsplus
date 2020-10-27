@@ -2,12 +2,22 @@
 /* ==========================================================================
    #FONT
    ========================================================================== */
-.font-robo {
-  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+@font-face {
+  font-family: 'SinaNovaReg';
+  src: url('/assets/fonts/SinaNovaReg.woff');
+}
+body {
+  font-family: 'SinaNovaReg';
+  color: #444444;
 }
 
-.font-poppins {
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+
+body, html {
+  height: 100vh;
+  font-family: SinaNovaReg, sans-serif;
 }
 
 /* ==========================================================================
@@ -125,7 +135,7 @@ button {
 }
 
 body {
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  font-family: "SinaNovaReg"
   font-weight: 400;
   font-size: 14px;
 }
@@ -246,7 +256,7 @@ h6 {
   cursor: pointer;
   font-size: 18px;
   color: #fff;
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  font-family: SinaNovaReg;
 }
 
 .btn--radius {
@@ -296,7 +306,7 @@ input[type="date" i] {
 
 .table-condensed td, .table-condensed th {
   font-size: 14px;
-  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+  font-family: SinaNovaReg;
   font-weight: 400;
 }
 

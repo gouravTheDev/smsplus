@@ -11,7 +11,7 @@
 	<title>SMS+ Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="assets/images/blackIco.jpg">
+	<link rel="icon" href="/assets/images/black-logo.png">
 	<!--===============================================================================================-->	
 	<!-- <link rel="icon" type="image/png" href="/assets/login/images/icons/favicon.ico"/> -->
 <!--===============================================================================================-->
@@ -29,6 +29,14 @@
 	<link rel="stylesheet" type="text/css" href="/assets/login/css/main.css">
 <!--===============================================================================================-->
 <style type="text/css">
+	@font-face {
+	  font-family: 'SinaNovaReg';
+	  src: url('/assets/fonts/SinaNovaReg.woff');
+	}
+	body {
+	  font-family: 'SinaNovaReg';
+	  color: #444444;
+	}
   #myVideo {
     position: fixed;
     right: 0;
@@ -85,7 +93,7 @@
 			<div class="card shadow login-box">
 				<div class="card-body text-center">
 					<img src="/assets/images/logo.png" height="120" width="auto">
-					<h3 class="mt-3 mb-0 font-weight-bold">MEMBER LOGIN</h3>
+					<h3 class="mt-3 mb-0 font-weight-bold">Member Login</h3>
 					<div class="mt-4 iFields">
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<input class="input100" type="text" name="email" placeholder="Email" value="<?php echo $preEmail; ?>" required>
@@ -104,13 +112,13 @@
 						</div>
 						
 						<div class="container-login100-form-btn">
-							<button type="submit" class="login100-form-btn">
+							<button type="submit" class="login100-form-btn" style="font-weight: bold; font-size: 1.2em;">
 								Login
 							</button>
 						</div>
 						<div class="text-center mt-3">
-							<a href="signup" style="color: #fff;" class="font-weight-bold" style="text-decoration: none;">New User? Sign Up!</a><br>
-                            <a style="color: #fff;" href="/">
+							<a href="signup" style="color: #fff; font-size: 1.2em;" class="font-weight-bold" style="text-decoration: none;">New User? Sign Up!</a><br>
+                            <a style="color: #fff; font-size: 1em;" href="/">
                                 Go to Home
                             </a>
 						</div>

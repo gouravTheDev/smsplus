@@ -9,7 +9,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <!-- Favicons -->
-  <link rel="icon" href="/assets/images/logo.png">
+  <link rel="icon" href="/assets/images/black-logo.png">
 
   <!-- Vendor CSS Files -->
   <!-- <link href="/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all"> -->

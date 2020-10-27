@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
-    <link rel="icon" href="assets/images/blackIco.jpg">
+    <link rel="icon" href="/assets/images/black-logo.png">
     <!-- Title Page-->
     <title>SMS+ Signup</title>
 
@@ -30,6 +30,14 @@
     <!-- Main CSS-->
     <link href="/assets/signup/css/main.css" rel="stylesheet" media="all">
     <style type="text/css">
+        @font-face {
+          font-family: 'SinaNovaReg';
+          src: url('/assets/fonts/SinaNovaReg.woff');
+        }
+        body {
+          font-family: 'SinaNovaReg';
+          color: #444444;
+        }
         #myVideo {
             position: fixed;
             right: 0;
@@ -75,9 +83,9 @@
             <div class="card login-box card-4">
                 <div class="card-body pt-4">
                     <div class="text-center mb-3">
-                        <img src="/assets/images/icon.png" height="120" width="auto">
+                        <img src="/assets/images/logo.png" height="120" width="auto">
                     </div>
-                    <h3 class="mb-0 pb-0 text-center font-weight-bold">Social<span class="blueC">My</span>Social<span class="blueC">+</span> Registration Form</h3>
+                    <h3 class="mb-1 pb-0 text-center font-weight-bold">Registration Form</h3>
                     <p class="mb-2 text-center" style="margin-bottom: 20px; margin-top: 10px;">Create your free account today.</p>
                     <form method="POST">
                     	<!-- <input type="hidden" name="formName" value="signUpForm">
@@ -122,10 +130,10 @@
                             </div>  
                             <div class="col-12 text-center mx-auto">
                                 <div class="p-t-15" style="text-align: center;"> 
-                                    <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                                    <button class="btn btn--radius-2 btn--blue" type="submit" style="font-weight: bold; font-size: 1.4em;">Sign Up</button>
                                     <br><br>
-                                    <a href="login" class="font-weight-bold" style="text-decoration: none; color: #fff;">Already a member? Sign In</a><br>
-                                    <a class="txt2" style="color: #fff;" href="/">
+                                    <a href="login" class="font-weight-bold" style="text-decoration: none; color: #fff; font-size: 1.2em;">Already a member? Sign In</a><br>
+                                    <a class="txt2" style="color: #fff; font-size: 1em;" href="/">
                                         Go to Home
                                     </a>
                                 </div>

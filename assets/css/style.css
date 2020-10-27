@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SinaNovaReg';
-  src: url('assets/fonts/SinaNovaReg.otf');
+  src: url('/assets/fonts/SinaNovaReg.woff');
 }
 body {
   font-family: 'SinaNovaReg';
