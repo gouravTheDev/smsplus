@@ -88,8 +88,8 @@
                     <h3 class="mb-0 pb-0 text-center font-weight-bold">Registration Form</h3>
                     <p class="mb-2 text-center" style="margin-bottom: 20px; margin-top: 10px; font-size: 1.2em;">Create your free account today.</p>
                     <form method="POST">
-                    	<!-- <input type="hidden" name="formName" value="signUpForm">
-						<input type="hidden" name="s_Hash" value="<?php echo $_SESSION['s_Hash']; ?>"> -->
+                    	<input type="hidden" name="formName" value="signUpForm">
+						          <input type="hidden" name="s_Hash" value="<?php echo $_SESSION['s_Hash']; ?>">
                         <div class="row mt-4">
                             <div class="col-12">
                                 <div class="form-group">
@@ -97,7 +97,7 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text font-weight-bold" id="basic-addon1">@</span>
                                       </div>
-                                      <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Username" aria-describedby="basic-addon1">
+                                      <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Email" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                             </div>  
@@ -128,6 +128,23 @@
                                     </div>
                                 </div>
                             </div>  
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                                      </div>
+                                      <input type="password" class="form-control" placeholder="Password" name="password" aria-label="Password" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-group mb-3">
+                                      <input type="password" class="form-control" placeholder="Password Again" name="password2" aria-label="Password Again" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-12 text-center mx-auto">
                                 <div class="p-t-15" style="text-align: center;"> 
                                     <button class="btn btn--radius-2 btn--blue" type="submit" style="font-weight: bold; font-size: 1.4em;">Sign Up</button>

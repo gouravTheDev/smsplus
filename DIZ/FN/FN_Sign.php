@@ -8,47 +8,50 @@
   $link = new mysqli(MYSQL_HOST,MYSQL_USER,MYSQL_PASS,MYSQL_DB);
   $link->set_charset("utf8");
 
+  function showErrorMsg($msg)
+  {
+    return '<div style="width: 100%; padding: 10px; text-align: center; font-weight: bold; background: #E7012A; color: #ffffff;">'.$msg.'</div>';
+  }
 
   //SIGNUP PHP CODE
 
   if (isset($_POST['formName']) && $_POST['formName']=="signUpForm"){
-      $fullname = $_POST['fullName'];
-      $email = $_POST['email'];
-      $phone = $_POST['phone'];
-      $age = $_POST['age'];
-      $gender = $_POST['gender'];
-      $password = $_POST['password'];
-      $referral = $_POST['referral'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
+    $userName = $_POST['userName'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password2'];
 
-      $today = date("Y-m-d");
+    $today = date("Y-m-d");
 
-      $password = md5($password);
-      // echo $password;
-
-      $sql = "SELECT * FROM USERS WHERE `EMAIL` = '$email' OR PHONE = '$phone'";
-      $result = mysqli_query($link, $sql);
-      if ($result) {
-        $results = mysqli_num_rows($result);
-        if($results>0){
-          echo '<script>alert("You are already registered. Please login to proceed");</script>';
-        }else{
-          $userId = G_uni_id_digits();
-          $sqlInsert = "INSERT INTO USERS (`USER_ID`, `NAME`, `EMAIL`, `PHONE`, `PASSWORD`, `AGE`, `GENDER`, `REG_DATE`, `MAIL_STATUS`, `STATUS`, `REFERRED_BY`) VALUES ('$userId', '$fullname', '$email', '$phone', '$password', '$age', '$gender', '$today', 'NOT VERIFIED', 'REGISTERED', '$referral')";
-
-          $resultInsert = mysqli_query($link, $sqlInsert);
-          if ($resultInsert) {
-            $_SESSION["LoggedIn"]=true;
-            $_SESSION["userEmail"] = $email;
-            $_SESSION["userId"] = $userId;
-            $_SESSION["userName"] = $fullname;
-            echo "<script>window.location.href='dashboard';</script>";
-          }else{
-            echo "<script>alert('Try Again');</script>";
-          }
-        }
+    $sql = "SELECT * FROM USERS WHERE `EMAIL` = '$email' OR `USER_NAME` = '$userName'";
+    $result = mysqli_query($link, $sql);
+    if ($result) {
+      $results = mysqli_num_rows($result);
+      if($results>0){
+        echo showErrorMsg("You are already registered! Please signin or use another mail Id.");
+      }else if ($password != $password2) {
+         echo showErrorMsg("Passwords are not same!");
       }else{
-        echo "<script>alert('".mysqli_error($link)."');</script>";
+        $password = md5($password);
+        $userId = D_create_UserId();
+        $sqlInsert = "INSERT INTO USERS (`USER_ID`, `FIRST_NAME`, `LAST_NAME`, `USER_NAME`, `EMAIL`, `PASSWORD`, `REG_DATE`, `STATUS`) VALUES ('$userId', '$firstName', '$lastName', '$userName', '$email', '$password', '$today', 'NOT VERIFIED')";
+
+        $resultInsert = mysqli_query($link, $sqlInsert);
+        if ($resultInsert) {
+          $_SESSION["LoggedIn"]=true;
+          $_SESSION["userEmail"] = $email;
+          $_SESSION["userId"] = $userId;
+          $_SESSION["userName"] = $fullname;
+          echo "<script>window.location.href='dashboard';</script>";
+        }else{
+          echo "<script>alert('Try Again');</script>";
+        }
       }
+    }else{
+      echo "<script>alert('".mysqli_error($link)."');</script>";
+    }
       
   }
   
