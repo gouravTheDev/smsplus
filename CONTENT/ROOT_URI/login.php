@@ -94,35 +94,39 @@
 				<div class="card-body text-center">
 					<img src="/assets/images/logo.png" height="120" width="auto">
 					<h3 class="mt-3 mb-0 font-weight-bold">Member Login</h3>
-					<div class="mt-4 iFields">
-						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-							<input class="input100" type="text" name="email" placeholder="Email" value="<?php echo $preEmail; ?>" required>
-							<span class="focus-input100"></span>
-							<span class="symbol-input100">
-								<i class="fa fa-envelope" aria-hidden="true"></i>
-							</span>
-						</div>
+					<form method="POST">
+						<input type="hidden" name="formName" value="signInForm">
+						<input type="hidden" name="s_Hash" value="<?php echo $_SESSION['s_Hash']; ?>">
+						<div class="mt-4 iFields">
+							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<input class="input100" type="email" name="email" placeholder="Email" required>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
+							</div>
 
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<input class="input100" type="password" name="password" placeholder="Password" required>
-							<span class="focus-input100"></span>
-							<span class="symbol-input100">
-								<i class="fa fa-lock" aria-hidden="true"></i>
-							</span>
+							<div class="wrap-input100 validate-input" data-validate = "Password is required">
+								<input class="input100" type="password" name="password" placeholder="Password" required>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-lock" aria-hidden="true"></i>
+								</span>
+							</div>
+							
+							<div class="container-login100-form-btn">
+								<button type="submit" class="login100-form-btn" style="font-weight: bold; font-size: 1.2em;">
+									Login
+								</button>
+							</div>
+							<div class="text-center mt-3">
+								<a href="signup" style="color: #fff; font-size: 1.2em;" class="font-weight-bold" style="text-decoration: none;">New User? Sign Up!</a><br>
+	                            <a style="color: #fff; font-size: 1em;" href="/">
+	                                Go to Home
+	                            </a>
+							</div>
 						</div>
-						
-						<div class="container-login100-form-btn">
-							<button type="submit" class="login100-form-btn" style="font-weight: bold; font-size: 1.2em;">
-								Login
-							</button>
-						</div>
-						<div class="text-center mt-3">
-							<a href="signup" style="color: #fff; font-size: 1.2em;" class="font-weight-bold" style="text-decoration: none;">New User? Sign Up!</a><br>
-                            <a style="color: #fff; font-size: 1em;" href="/">
-                                Go to Home
-                            </a>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>

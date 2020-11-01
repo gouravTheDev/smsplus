@@ -62,13 +62,13 @@
               min-height: 100%;
             }
           }
-        .login-box{
-            color: #fff;
-            background: rgba(0, 0, 0, 0.7);
-        }
-        .blueC{
-            color: #2F90F0;
-        }
+          .login-box{
+              color: #fff;
+              background: rgba(0, 0, 0, 0.7);
+          }
+          .blueC{
+              color: #2F90F0;
+          }
     </style>
 </head>
 <body>
@@ -87,7 +87,7 @@
                     </div>
                     <h3 class="mb-0 pb-0 text-center font-weight-bold">Registration Form</h3>
                     <p class="mb-2 text-center" style="margin-bottom: 20px; margin-top: 10px; font-size: 1.2em;">Create your free account today.</p>
-                    <form method="POST">
+                    <form method="POST" id="signUpForm">
                     	<input type="hidden" name="formName" value="signUpForm">
 						          <input type="hidden" name="s_Hash" value="<?php echo $_SESSION['s_Hash']; ?>">
                         <div class="row mt-4">
@@ -97,7 +97,7 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text font-weight-bold" id="basic-addon1">@</span>
                                       </div>
-                                      <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Email" aria-describedby="basic-addon1">
+                                      <input required type="email" class="form-control" placeholder="Email" name="email" aria-label="Email" aria-describedby="basic-addon1" id="email">
                                     </div>
                                 </div>
                             </div>  
@@ -107,8 +107,9 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text " id="basic-addon1"><i class="fa fa-user"></i></span>
                                       </div>
-                                      <input type="text" class="form-control" placeholder="User Name" name="username" aria-label="Username" aria-describedby="basic-addon1">
+                                      <input required type="text" id="userName" class="form-control" placeholder="User Name" name="userName" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
+                                    <p style="color: red; font-weight: bold; display: none;" id="userNameError">The user name is already taken!</p>
                                 </div>
                             </div> 
                             <div class="col-md-6 col-sm-12">
@@ -117,14 +118,14 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text " id="basic-addon1"><i class="fa fa-user-plus"></i></span>
                                       </div>
-                                      <input type="text" class="form-control" placeholder="First Name" name="firstName" aria-label="Username" aria-describedby="basic-addon1">
+                                      <input required type="text" class="form-control" placeholder="First Name" name="firstName" aria-label="Username" aria-describedby="basic-addon1" id="firstName">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
                                     <div class="form-group mb-3">
-                                      <input type="text" class="form-control" placeholder="Last Name" name="lastName" aria-label="Username" aria-describedby="basic-addon1">
+                                      <input required type="text" class="form-control" placeholder="Last Name" name="lastName" aria-label="Username" aria-describedby="basic-addon1" id="lastName">
                                     </div>
                                 </div>
                             </div>  
@@ -134,25 +135,27 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
                                       </div>
-                                      <input type="password" class="form-control" placeholder="Password" name="password" aria-label="Password" aria-describedby="basic-addon1">
+                                      <input required type="password" class="form-control" placeholder="Password" name="password" aria-label="Password" aria-describedby="basic-addon1" id="password">
                                     </div>
                                 </div>
+                                <p style="color: red; font-weight: bold; display: none;" id="passwordError">Both the passwords must be same</p>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
                                     <div class="form-group mb-3">
-                                      <input type="password" class="form-control" placeholder="Password Again" name="password2" aria-label="Password Again" aria-describedby="basic-addon1">
+                                      <input required type="password" class="form-control" placeholder="Password Again" name="password2" aria-label="Password Again" aria-describedby="basic-addon1" id="password2">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 text-center mx-auto">
                                 <div class="p-t-15" style="text-align: center;"> 
-                                    <button class="btn btn--radius-2 btn--blue" type="submit" style="font-weight: bold; font-size: 1.4em;">Sign Up</button>
-                                    <br><br>
-                                    <a href="login" class="font-weight-bold" style="text-decoration: none; color: #fff; font-size: 1.2em;">Already a member? Sign In</a><br>
-                                    <a class="txt2" style="color: #fff; font-size: 1em;" href="/">
-                                        Go to Home
-                                    </a>
+                                  <p style="color: red; font-weight: bold; margin-bottom: 20px; font-size: 1.3em; display: none;" id="fieldsError">Please fill all the fields!</p>
+                                  <button class="btn btn--radius-2 btn--blue" type="button" onclick="validateForm()" style="font-weight: bold; font-size: 1.4em;">Sign Up</button>
+                                  <br><br>
+                                  <a href="login" class="font-weight-bold" style="text-decoration: none; color: #fff; font-size: 1.2em;">Already a member? Sign In</a><br>
+                                  <a class="txt2" style="color: #fff; font-size: 1em;" href="/">
+                                      Go to Home
+                                  </a>
                                 </div>
                             </div>
                         </div>
@@ -161,18 +164,54 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/JS/countries.js"></script>
+    <script type="text/javascript">
+      function validateForm() {
+        var userName = document.getElementById('userName').value;
+        var email = document.getElementById('email').value;
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var password = document.getElementById('password').value;
+        var password2 = document.getElementById('password2').value;
+        var userNameError = document.getElementById('userNameError');
+        var passwordError = document.getElementById('passwordError');
+        var fieldsError = document.getElementById('fieldsError');
+        userNameError.style.display = "none";
+        passwordError.style.display = "none";
+        fieldsError.style.display = "none";
+        console.log(password)
+        if (password == '' || password2 == '' || firstName == '' || lastName == '' || userName == '' || email == '') {
+          fieldsError.style.display = "block";
+        }else{
+          fetch('/API/V1/?checkUserName&userName='+userName)
+          .then(function(response) {
+            if (response.status !== 200) {
+              console.log(
+                "Looks like there was a problem. Status Code: " + response.status
+              );
+              return;
+            }
+            response.json().then(function(data) {
+              if (data.data == 'present') {
+                userNameError.style.display = "block";
+              }else if (password != password2) {
+                passwordError.style.display = "block";
+              }else{
+                document.getElementById("signUpForm").submit();
+              }
+            });
+          })
+          .catch(function(err) {
+            console.log("Fetch Error :-S", err);
+          });
+        }
+      }
+    </script>
     <!-- Jquery JS-->
     <script src="/assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!-- Vendor JS-->
     <script src="/assets/login/vendor/select2/select2.min.js"></script>
-    <script src="/assets/login/vendor/datepicker/moment.min.js"></script>
-    <script src="/assets/login/vendor/datepicker/daterangepicker.js"></script>
-
     <!-- Main JS-->
     <script src="/assets/signup/js/global.js"></script>
-
-
 
 </body>
 

@@ -30,9 +30,10 @@
     if ($result) {
       $results = mysqli_num_rows($result);
       if($results>0){
-        echo showErrorMsg("You are already registered! Please signin or use another mail Id.");
+        echo '<script>alert("You are already registered! Please signin or use another mail Id.")</script>';
       }else if ($password != $password2) {
-         echo showErrorMsg("Passwords are not same!");
+        echo '<script>alert("Passwords are not same!")</script>';
+         // echo showErrorMsg("Passwords are not same!");
       }else{
         $password = md5($password);
         $userId = D_create_UserId();
@@ -41,9 +42,8 @@
         $resultInsert = mysqli_query($link, $sqlInsert);
         if ($resultInsert) {
           $_SESSION["LoggedIn"]=true;
-          $_SESSION["userEmail"] = $email;
           $_SESSION["userId"] = $userId;
-          $_SESSION["userName"] = $fullname;
+          $_SESSION["userName"] = $userName;
           echo "<script>window.location.href='dashboard';</script>";
         }else{
           echo "<script>alert('Try Again');</script>";
@@ -52,14 +52,12 @@
     }else{
       echo "<script>alert('".mysqli_error($link)."');</script>";
     }
-      
   }
-  
 
 
   // SIGN IN PHP CODE
 
-  if (isset($_POST['formName']) && $_POST['formName']=="signinForm"){
+  if (isset($_POST['formName']) && $_POST['formName']=="signInForm"){
       $email = $_POST['email'];
 
       $password = $_POST['password'];
@@ -71,7 +69,7 @@
 
       $results = mysqli_num_rows($result);
       if($results==0){
-           echo "<script>alert('You are not registered. Please Login');</script>";
+           echo "<script>alert('You are not registered. Please Register first');</script>";
       }else{
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $passwordDB = $row['PASSWORD'];
