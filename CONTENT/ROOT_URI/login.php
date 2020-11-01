@@ -3,7 +3,11 @@
     window.history.replaceState( null, null, window.location.href );
   }
 </script>
-
+<?php 
+	if ($_SESSION['LoggedIn']) {
+		echo "<script>window.location.href='dashboard';</script>";
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

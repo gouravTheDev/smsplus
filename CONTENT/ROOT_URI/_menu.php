@@ -11,8 +11,12 @@
         <ul>
           <li><a style="font-weight: bold;" href="/" style="font-size: 1.4em;">Home</a></li>
           <li><a style="font-weight: bold;" href="#">About Us</a></li>
-          <li><a style="font-weight: bold;" href="login">Login</a></li>
-          <li><a style="font-weight: bold;" href="signup">Sign Up</a></li>
+          <?php if ($_SESSION['LoggedIn']) { ?>
+            <li><a style="font-weight: bold;" href="logout">Log Out</a></li>
+       <?php }else{ ?>
+            <li><a style="font-weight: bold;" href="login">Login</a></li>
+            <li><a style="font-weight: bold;" href="signup">Sign Up</a></li>
+       <?php } ?>
           <li><a style="font-weight: bold;" href="#">Affiliate Login</a></li>
           <li><a style="font-weight: bold;" href="#">Engagement Pods</a></li>
           <li><a style="font-weight: bold;" href="#">Services</a></li>
