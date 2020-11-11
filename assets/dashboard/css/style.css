@@ -1,12 +1,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
-/*Theme Colors*/
-/*Topbar Colors*/
-/*Sidebar Colors*/
-/*Boxed layout width*/
-/*Shadow*/
-/*transitions*/
-/*Dark transparent bg*/
+
 @import url(icons/font-awesome/css/fontawesome-all.css);
 @import url(icons/themify-icons/themify-icons.css);
 @import url(icons/material-design-iconic-font/css/materialdesignicons.min.css);
@@ -40,12 +34,7 @@
  *  12. Forms
  *  14. Component
  */
-/*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
 :root {
   --blue: #2962FF;
   --indigo: #6610f2;

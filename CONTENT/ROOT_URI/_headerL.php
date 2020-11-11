@@ -13,3 +13,14 @@
     <link rel="stylesheet" href="assets/dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="assets/dashboard/css/style.min.css" rel="stylesheet">
+    <style type="text/css">
+        .btnSmm{
+            background: #2F90F0;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .btnSmm:hover{
+          background: #0666C5;
+          color: #ffffff;
+        }
+    </style>

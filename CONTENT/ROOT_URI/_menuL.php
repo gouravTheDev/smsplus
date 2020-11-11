@@ -1,3 +1,23 @@
+<?php 
+$link = new mysqli(MYSQL_HOST,MYSQL_USER,MYSQL_PASS,MYSQL_DB);
+$link->set_charset("utf8");
+if ($_SESSION['LoggedIn']) {
+    $userId = $_SESSION["userId"];
+    $sql = "SELECT * FROM USERS WHERE USER_ID = '$userId'";
+    $result = mysqli_query($link,$sql);
+
+    if($result){
+      if(mysqli_num_rows($result)>0){
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $firstName = $row["FIRST_NAME"];
+        $lastName = $row["LAST_NAME"];
+        $userName = $row["USER_NAME"];
+        $fullName = $firstName." ".$lastName;
+        $email = $row["EMAIL"];
+      }
+    }
+}
+?>
 <body>
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
@@ -18,11 +38,11 @@
     <!-- ============================================================== -->
     <header class="topbar" data-navbarbg="skin5">
         <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-            <div class="navbar-header" data-logobg="skin6">
+            <div class="navbar-header text-center" data-logobg="skin6">
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="/" class="pt-2">
+                <a class="navbar-brand" href="/" class="pt-2" style="border-bottom: 1px solid #BDBCB3; margin-top: 6px; margin-bottom: 10px; padding-bottom: 5px; padding-left: 30px;">
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
@@ -75,8 +95,8 @@
                     <!-- ============================================================== -->
                     <li>
                         <a class="profile-pic" href="#">
-                            <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                            <img src="assets/images/demouser.jpg" alt="user-img" width="36"
+                                class="img-circle"><span class="text-white font-medium"><?php echo $userName; ?></span></a>
                     </li>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -99,58 +119,58 @@
                 <ul id="sidebarnav">
                     <!-- User Profile-->
                     <li class="sidebar-item pt-2">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
                             aria-expanded="false">
                             <i class="far fa-clock" aria-hidden="true"></i>
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="new-order"
                             aria-expanded="false">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Profile</span>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            <span class="hide-menu">New Order</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="services"
                             aria-expanded="false">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Basic Table</span>
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <span class="hide-menu">Services</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="orders"
                             aria-expanded="false">
-                            <i class="fa fa-font" aria-hidden="true"></i>
-                            <span class="hide-menu">Icon</span>
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                            <span class="hide-menu">Orders</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="add-funds"
                             aria-expanded="false">
-                            <i class="fa fa-globe" aria-hidden="true"></i>
-                            <span class="hide-menu">Google Map</span>
+                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                            <span class="hide-menu">Add funds</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tickets"
                             aria-expanded="false">
-                            <i class="fa fa-columns" aria-hidden="true"></i>
-                            <span class="hide-menu">Blank Page</span>
+                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                            <span class="hide-menu">Tickets</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="account"
                             aria-expanded="false">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="hide-menu">Error 404</span>
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <span class="hide-menu">Account</span>
                         </a>
                     </li>
                     <li class="text-center p-20 upgrade-btn">
-                        <a href="https://www.wrappixel.com/templates/ampleadmin/"
-                            class="btn btn-block btn-danger text-white" target="_blank">
-                            Upgrade to Pro</a>
+                        <a href="logout"
+                            class="btn btn-block btn-danger text-white shadow">
+                            Logout</a>
                     </li>
                 </ul>
 
