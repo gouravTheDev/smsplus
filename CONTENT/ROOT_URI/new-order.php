@@ -36,7 +36,7 @@ All comments from accounts with 10 000+ Followers";
     						<option value="Instagram Comments">Instagram Comments</option>
     						<option value="Instagram Likes">Instagram Likes</option>
     						<option value="Instagram Follows">Instagram Follows</option>
-    						<option value="Youtube Subs">Youtube Subs</option>
+    						<option value="Youtube Subs">Youtube Subscibers</option>
     						<option value="Youtube Engagement">Youtube Engagement</option>
     						<option value="Facebook Likes">Facebook Likes</option>
     						<option value="Facebook Comments">Facebook Comments</option>
