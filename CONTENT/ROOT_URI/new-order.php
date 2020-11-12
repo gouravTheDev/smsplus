@@ -12,7 +12,8 @@ All comments from accounts with 10 000+ Followers";
 
 <div class="page-breadcrumb bg-white">
     <div class="row align-items-center">
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pt-2">
+            <h4 class="page-title text-uppercase font-medium font-14">Place New Order</h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <div class="d-md-flex">
@@ -24,12 +25,12 @@ All comments from accounts with 10 000+ Followers";
     </div>
 </div>
 
-<div class="container-fluid pt-0">
-    <h1 class="text-center">Place New Order</h1>
+<div class="container-fluid pt-3">
+    <!-- <h1 class="text-center"></h1> -->
     <div class="col-md-10 col-sm-12 mx-auto">
     	<div class="card shadow">
     		<div class="card-body" style="font-size: 1.2em;">
-    			<form method="POST">
+    			<form method="POST" class="col-md-11 col-sm-12 mx-auto">
     				<div class="form-group">
     					<label>Category</label>
     					<select class="form-control" name="category">
