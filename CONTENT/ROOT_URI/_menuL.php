@@ -140,7 +140,7 @@ if ($_SESSION['LoggedIn']) {
                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="orders"
                             aria-expanded="false">
                             <i class="fa fa-gift" aria-hidden="true"></i>
-                            <span class="hide-menu">Orders</span>
+                            <span class="hide-menu">Order History</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
