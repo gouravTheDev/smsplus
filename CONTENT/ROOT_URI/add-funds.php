@@ -1,4 +1,4 @@
-<title>SMS+ Add Funds</title>
+<title>SocialMySocial+ Add Funds</title>
 
 <?php include '_menuL.php'; ?>
 <?php 

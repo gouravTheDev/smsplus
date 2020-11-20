@@ -1,4 +1,4 @@
-<title>About BestGrade</title>
+<title>About SocialMySocial</title>
 <meta content="" name="descriptison">
 <meta content="" name="keywords">
 

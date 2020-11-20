@@ -38,22 +38,19 @@ if ($_SESSION['LoggedIn']) {
     <!-- ============================================================== -->
     <header class="topbar" data-navbarbg="skin5">
         <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-            <div class="navbar-header text-center" data-logobg="skin6">
+            <div class="navbar-header text-center" data-logobg="skin6" style="text-align: center;">
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="/" class="pt-2" style="border-bottom: 1px solid #BDBCB3; margin-top: 6px; margin-bottom: 10px; padding-bottom: 5px; padding-left: 30px;">
+                <a class="navbar-brand" href="/" class="pt-2" style="border-bottom: 1px solid #BDBCB3; margin-top: 6px; margin-bottom: 10px; padding-bottom: 5px; padding-left: 50px; text-align: center; ">
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
-                        <img src="assets/black-logo.png" alt="socialMySocial Icon" height="60" />
+                        <img src="assets/images/black-full-logo.png" alt="socialMySocial Icon" height="60" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
-                    <span class="logo-text">
-                        <!-- dark Logo text -->
-                        <h3 style="color: #000000;">SMS+</h3>
-                    </span>
+                   
                 </a>
                 <!-- ============================================================== -->
                 <!-- End Logo -->

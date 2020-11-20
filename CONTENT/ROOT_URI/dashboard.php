@@ -1,4 +1,4 @@
-<title>SMS+ Dashboard</title>
+<title>SocialMySocial+ Dashboard</title>
 
 <?php include '_menuL.php'; ?>
 <?php 
@@ -10,7 +10,7 @@
 <div class="page-breadcrumb bg-white">
     <div class="row align-items-center">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pt-2">
-            <h4 class="page-title text-uppercase font-medium font-14">SMS+ Dashboard</h4>
+            <h4 class="page-title text-uppercase font-medium font-14">SocialMySocial+ Dashboard</h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <div class="d-md-flex">
@@ -27,7 +27,7 @@
         <div class="card-body text-center">
             <img src="assets/images/demouser.jpg" alt="user-img" width="80" height="80" 
                                 class="mb-2" style="border-radius: 50%;">
-            <h1 style="color: #ffffff;">Welcome <?php echo $userName; ?> to SMS+ User Dashboard</h1>
+            <h1 style="color: #ffffff;">Welcome <?php echo $userName; ?> to SocialMySocial+ User Dashboard</h1>
         </div>
     </div>
     <div class="row mt-4">

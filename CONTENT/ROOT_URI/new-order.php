@@ -1,4 +1,4 @@
-<title>SMS+ New Order</title>
+<title>SocialMySocial+ New Order</title>
 
 <?php include '_menuL.php'; ?>
 <?php 

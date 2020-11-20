@@ -2,6 +2,7 @@
   font-family: 'SinaNovaReg';
   src: url('/assets/fonts/SinaNovaReg.woff');
 }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 body {
   font-family: 'SinaNovaReg';
   color: #444444;
@@ -198,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   transition: 0.3s;
   font-size: 15px;
-  font-family: 'SinaNovaReg';
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 

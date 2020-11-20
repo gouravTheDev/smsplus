@@ -45,14 +45,14 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 mainSec order-2 order-sm-1 order-md-1">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mainSec text-center">
           <h1>Social<span>My</span>Social<span>+</span></h1>
           <a href="#services" class="btn roundedButton mt-4 shadow scrollto">Get Started</a>
           <a href="login" class="btn roundedButton2 mt-4 shadow">Sign In</a>
         </div>
-        <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 imgSec order-1 order-sm-2 order-md-2">
+        <!-- <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 imgSec order-1 order-sm-2 order-md-2">
           <img src="assets/icons/social-networks.png" class="mainImg" data-aos="fade-down-left" data-aos-delay="500">
-        </div>
+        </div> -->
       </div>
 
     </div>

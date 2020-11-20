@@ -1,4 +1,4 @@
-<title>SMS+ Tickets</title>
+<title>SocialMySocial+ Tickets</title>
 
 <?php include '_menuL.php'; ?>
 <?php 
