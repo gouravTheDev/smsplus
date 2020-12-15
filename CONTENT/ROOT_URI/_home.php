@@ -3,8 +3,10 @@
 <meta content="" name="keywords">
 
 <?php include '_menu.php'; ?>
+
 <style type="text/css">
   #myVideo {
+    display: block;
     position: fixed;
     right: 0;
     bottom: 0;
@@ -14,7 +16,14 @@
   #myVideo2 {
     display: none;
   }
-  @media (max-width: 769px) {
+  .imgDiv{
+    text-align: center;
+  }
+  .socImage{
+      width: 400px;
+      height: 400px;
+    }
+  @media (max-width: 780px) {
     #myVideo {
       display: none;
     }
@@ -27,10 +36,21 @@
       min-width: 100%; 
       min-height: 100%;
     }
+    .sectionDiv{
+      margin: 40px 16px 20px;
+    }
+    .imgDiv{
+      text-align: center;
+    }
+    .socImage{
+      width: 230px;
+      height: 230px;
+    }
   }
   .content {
     background: rgba(0, 0, 0, 0.6);
   }
+
 </style>
 
  <!-- ======= Hero Section ======= -->
@@ -46,7 +66,7 @@
 
       <div class="row" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mainSec text-center">
-          <h1>Social<span>My</span>Social<span>+</span></h1>
+          <h1 id="mainHeading">Social<span>My</span>Social<span>+</span></h1>
           <a href="#services" class="btn roundedButton mt-4 shadow scrollto">Get Started</a>
           <a href="login" class="btn roundedButton2 mt-4 shadow">Sign In</a>
         </div>
@@ -148,28 +168,28 @@
           <p style="color: #ffffff;">What we provide</p>
         </div>
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2 text-right" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/icons/sm.png" width="500" class="img-fluid" alt="">
+          <div class="col-lg-6 order-1 order-lg-2 imgDiv" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/icons/sm.png" class="img-fluid socImage" alt="">
           </div>
-          <div class="col-lg-6 pt-lg-0 order-2 order-lg-1 content" style="color: #fff;" data-aos="fade-right" data-aos-delay="100">
+          <div class="col-lg-6 pt-lg-0 order-2 order-lg-1 content sectionDiv" style="color: #fff;" data-aos="fade-right" data-aos-delay="100">
             <div class="my-4">
               <h3>Social Media Services</h3>
-              <p>
+              <p class="text-justify">
                 SMS (Social My Social+) is directly using social networking sites such as  Twitter, Facebook, and LinkedIn to promote your website. At multi-smm.com we offer Instagram reseller panels, as well as other cheap smm panels. If you are looking for the most competitive SMM panels, smseplus.com has experienced workers with years of experience and are guaranteed to give you and amazing experience.
               </p>
-              <p>
+              <p class="text-justify">
                 Anyone who is involved in the field of marketing would have noticed a sudden shift to the use of social media to engage with customers. Social networking sites such as Facebook, Twitter, YouTube, and increasingly Instagram, are becoming the hottest new places to get in touch with their clients. If you are in marketing or even have an online business, then you should know all about this trend so that you too can make use of it to further your interests. As a matter of fact, this is becoming so important that there are plenty of social media jobs available.
               </p>
             </div>
           </div>
         </div>
         <div class="row mt-5">
-          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/icons/social-media.png" height="10" width="400" class="img-fluid" alt="">
+          <div class="col-lg-6 order-2 order-lg-1 imgDiv" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/icons/social-media.png" class="img-fluid socImage" alt="">
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+          <div class="col-lg-6 pt-1 pt-lg-0 order-2 order-lg-1 content sectionDiv" data-aos="fade-right" data-aos-delay="100">
             <div class="my-4" style="color: #ffffff;">
-              <p>
+              <p class="text-justify">
                 This medium is growing at a very fast pace. Since the number of people joining Facebook, Twitter and Instagram is increasing by leaps and bounds, marketers have access to vast numbers of individuals almost effortlessly.
               </p>
               <ul>
@@ -180,7 +200,7 @@
                 <li><i class="ri-check-double-line"></i> Automatic order processing</li>
                 <li><i class="ri-check-double-line"></i> Instantdelivery</li>
               </ul>
-              <p>
+              <p class="text-justify">
                 This medium provides seamless connectivity to customers. People from all over the world can be given updates about the business as soon as they happen. Since the marketer communicates directly with the customer through social networking sites, there is no chance of any mistake in communication. The information that the clients get through these media is also generally believed to be more credible.
               </p>
             </div>
@@ -266,6 +286,22 @@
 
   </main><!-- End #main -->
   </div>
+  <script type="text/javascript">
+  window.addEventListener("load", () =>{
+    var myV = document.getElementById('myVideo');
+    var myV2 = document.getElementById('myVideo2');
+
+    myV.onloadeddata = (event) => {
+      console.log("sdfsdf")
+    };
+     myV2.onloadeddata = (event) => {
+      console.log("Ersdsdfro")
+    };
+  });
+
+
+ 
+</script>
 
 <script type="text/javascript">
   function saveContact() {

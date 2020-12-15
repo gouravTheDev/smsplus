@@ -542,10 +542,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 800px) {
-  #hero .mainSec {
+  #hero .container .row .mainSec {
     text-align: center;
-    padding-top: 0px;
-  }
+    padding-top: 120px;
+  } 
   .mainImg{
     height: 300px;
     width: 300px;
