@@ -66,14 +66,20 @@
     myV2.style.display = "none";
 
     myV.onloadeddata = (event) => {
-      if(screen.width > 780){
-        document.getElementById('topSection').id = "noId";
+      if (screen.width>780) {
+        console.log("Video 1");
+        if (document.getElementById('topSection')) {
+          document.getElementById('topSection').id = "noId";
+        }
         myV.style.display = "block";
       }
     };
     myV2.onloadeddata = (event) => {
-      if(screen.width <= 780){
-        document.getElementById('topSection').id = "noId";
+      if (screen.width<=780) {
+        console.log("Video 2");
+        if (document.getElementById('topSection')) {
+          document.getElementById('topSection').id = "noId";
+        }
         myV2.style.display = "block";
       }
     };
