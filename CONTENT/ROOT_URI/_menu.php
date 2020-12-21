@@ -1,8 +1,9 @@
 </head>
+<body>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top py-2">
-    <div class="container d-flex align-items-center justify-content-between" id="headContainer" style="margin-top: 0; margin-bottom: 0;">
+    <div class="container d-flex align-items-center justify-content-between" id="headContainer" id="topSection" style="margin-top: 0; margin-bottom: 0;">
 
       <!-- <h1 class="logo"><a href="/"><img src="/assets/images/logo.png" style="height: 80px;"></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
@@ -28,4 +29,4 @@
 
     </div>
   </header><!-- End Header -->
-  <body>
+  

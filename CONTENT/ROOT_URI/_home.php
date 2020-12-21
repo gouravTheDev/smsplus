@@ -5,7 +5,11 @@
 <?php include '_menu.php'; ?>
 
 <style type="text/css">
-  #myVideo {
+  #topSection{
+    background-image: linear-gradient(to right top, #110c80, #1b1182, #221584, #291a86, #2f1e88, #322c91, #35399a, #3a46a2, #425db1, #5073be, #6189c9, #779fd3);;
+   }
+   @media (min-width: 781px) {
+    #myVideo {
     display: block;
     position: fixed;
     right: 0;
@@ -23,6 +27,7 @@
       width: 400px;
       height: 400px;
     }
+  }
   @media (max-width: 780px) {
     #myVideo {
       display: none;
@@ -53,6 +58,40 @@
 
 </style>
 
+<script type="text/javascript">
+  window.addEventListener("load", () =>{
+    var myV = document.getElementById('myVideo');
+    var myV2 = document.getElementById('myVideo2');
+    myV.style.display = "none";
+    myV2.style.display = "none";
+
+    myV.onloadeddata = (event) => {
+      if(screen.width > 780){
+        document.getElementById('topSection').id = "noId";
+        myV.style.display = "block";
+      }
+    };
+    myV2.onloadeddata = (event) => {
+      if(screen.width <= 780){
+        document.getElementById('topSection').id = "noId";
+        myV2.style.display = "block";
+      }
+    };
+  });
+
+  // window.addEventListener("load", () =>{
+  //   var myV2 = document.getElementById('myVideo2');
+  //   console.log(myV2)
+
+  //   myV2.onloadeddata = (event) => {
+  //     console.log("Ersdsdfro")
+  //   };
+  // });
+
+
+ 
+</script>
+
  <!-- ======= Hero Section ======= -->
  <video autoplay muted loop id="myVideo">
   <source src="assets/videos/v1.mp4" type="video/mp4">
@@ -60,7 +99,7 @@
  <video autoplay muted loop id="myVideo2">
   <source src="assets/videos/v2.mp4" type="video/mp4">
  </video>
- <div class="content">
+<div class="content topGrad" id="topSection">
   <section id="hero" class="">
     <div class="container" data-aos="fade-up">
 
@@ -285,23 +324,8 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-  </div>
-  <script type="text/javascript">
-  window.addEventListener("load", () =>{
-    var myV = document.getElementById('myVideo');
-    var myV2 = document.getElementById('myVideo2');
-
-    myV.onloadeddata = (event) => {
-      console.log("sdfsdf")
-    };
-     myV2.onloadeddata = (event) => {
-      console.log("Ersdsdfro")
-    };
-  });
-
-
- 
-</script>
+</div>
+  
 
 <script type="text/javascript">
   function saveContact() {
