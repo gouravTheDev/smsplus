@@ -90,7 +90,7 @@
 	  <source src="assets/videos/v1.mp4" type="video/mp4">
 	</video>
 	<video autoplay muted loop id="myVideo2">
-	  <source src="assets/videos/v2.mp4" type="video/mp4">
+	  <source src="assets/videos/video2.mp4" type="video/mp4">
 	</video>
 	<div class="content container">
 		<div class="col-md-6 mx-auto pt-4">

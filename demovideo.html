@@ -18,12 +18,12 @@
 
       // video.oncanplay = e => video.play();
 
-      const urls = ["https://smseplus.com/assets/videos/v1.mp4"];
+      const urlT = "https://smm.go/assets/videos/v1.mp4";
 
       const request = url => fetch(url, {mode: 'no-cors'}).then(response => response.arrayBuffer());
 
       // `urls.reverse()` stops at `.currentTime` : `9`
-      const files = await Promise.all(urls.map(request));
+      const files = await Promise.all(request(urlT));
 
       /*
        `.webm` files

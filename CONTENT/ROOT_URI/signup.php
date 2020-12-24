@@ -81,7 +81,7 @@
       <source src="assets/videos/v1.mp4" type="video/mp4">
     </video>
     <video autoplay muted loop id="myVideo2">
-      <source src="assets/videos/v2.mp4" type="video/mp4">
+      <source src="assets/videos/video2.mp4" type="video/mp4">
     </video>
     <div class="page-wrapper bg-gra-02 p-b-100 font-poppins" style="padding-top: 1.5em;">
         <div class="wrapper wrapper--w680">
