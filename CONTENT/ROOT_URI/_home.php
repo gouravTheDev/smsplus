@@ -65,7 +65,7 @@
  <video autoplay muted loop id="myVideo2">
   <source src="assets/videos/video2.mp4" type="video/mp4">
  </video>
-<div class="content topGrad">
+<div class="content" id="topSection">
   <section id="hero" class="">
     <div class="container" data-aos="fade-up">
 
