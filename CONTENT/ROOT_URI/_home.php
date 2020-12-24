@@ -58,46 +58,6 @@
 
 </style>
 
-<script type="text/javascript">
-  window.addEventListener("load", () =>{
-    var myV = document.getElementById('myVideo');
-    var myV2 = document.getElementById('myVideo2');
-    myV.style.display = "none";
-    myV2.style.display = "none";
-
-    myV.onloadeddata = (event) => {
-      if (screen.width>780) {
-        console.log("Video 1");
-        if (document.getElementById('topSection')) {
-          document.getElementById('topSection').id = "noId";
-        }
-        myV.style.display = "block";
-      }
-    };
-    myV2.onloadeddata = (event) => {
-      if (screen.width<=780) {
-        console.log("Video 2");
-        if (document.getElementById('topSection')) {
-          document.getElementById('topSection').id = "noId";
-        }
-        myV2.style.display = "block";
-      }
-    };
-  });
-
-  // window.addEventListener("load", () =>{
-  //   var myV2 = document.getElementById('myVideo2');
-  //   console.log(myV2)
-
-  //   myV2.onloadeddata = (event) => {
-  //     console.log("Ersdsdfro")
-  //   };
-  // });
-
-
- 
-</script>
-
  <!-- ======= Hero Section ======= -->
  <video autoplay muted loop id="myVideo">
   <source src="assets/videos/v1.mp4" type="video/mp4">
@@ -105,7 +65,7 @@
  <video autoplay muted loop id="myVideo2">
   <source src="assets/videos/v2.mp4" type="video/mp4">
  </video>
-<div class="content topGrad" id="topSection">
+<div class="content topGrad">
   <section id="hero" class="">
     <div class="container" data-aos="fade-up">
 
@@ -362,7 +322,7 @@
         formData.append('subject', subject);
         formData.append('submitContact', "true");
 
-        fetch('/API/V1/', {
+        fetch('/API/v1/', {
           method: 'POST',
           body: formData
         })
