@@ -66,7 +66,7 @@
     }
   }
   .content {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
   }
   p{
   	font-size: 1.2em;
@@ -165,63 +165,139 @@
 
       </div>
     </section>
-    <div class="owl-carousel testimonials-carousel" data-aos="fade-up">
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
-          </div>
+        <div class="section-title" data-aos="zoom-out">
+          <p style="color: #ffffff;">Click & Join</p>
+        </div>
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-          </div>
+        <div class="owl-carousel testimonials-carousel" data-aos="fade-up">
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-          </div>
+          <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSEntrpreneurs" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Entrepreneurs</h3>
+              </div>
+          	</a>
+           </div>
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-          </div>
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSEFashionBeauty" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Fashion & Beauty</h3>
+              </div>
+          	</a>
+           </div>
 
-          <div class="testimonial-item">
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-          </div>
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSEFitnessHealth" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Fitness & Health</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSELadies" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Ladies</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSE1kAccess" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">1k Access</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSE5kAccess" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">5k Access</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSE8kAccess" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">8k Access</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSE10kAccess" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">10k Access</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSE15kAccess" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">15k Access</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/SMSEGentlemen" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Gentlemen</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/joinchat/SQRWRxvdcuIb3gQIiKFcVg" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Pets</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/joinchat/SQRWRxJ5Z5I8WJPseBgDkg" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Foods & Travels</h3>
+              </div>
+          	</a>
+           </div>
+
+           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          	<a href="https://t.me/joinchat/SQRWRxuBvG00MUBwxqJYLA" style="color: #000; text-decoration: none;">
+              <div class="card-body">
+              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
+                <h3 class="card-title font-weight-bold mt-1">Videographers & Photographers</h3>
+              </div>
+          	</a>
+           </div>
+
+
+
 
         </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
 </main>
 </div>
