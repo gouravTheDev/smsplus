@@ -8,6 +8,17 @@
   #topSection{
     background-image: linear-gradient(to right top, #110c80, #1b1182, #221584, #291a86, #2f1e88, #322c91, #35399a, #3a46a2, #425db1, #5073be, #6189c9, #779fd3);;
    }
+   .engIcon{
+   	width: 30px;
+   	height: 120px;
+   	display: block;
+   }
+   .engCard { transition: transform .2s; }
+   .engCard:hover{
+   		background-color: #1195C8;
+    
+    /*transform: scale(1.5);*/
+   }
    @media (min-width: 781px) {
     #myVideo {
     display: block;
@@ -33,8 +44,16 @@
     .headingWidth{
     	width: 300px;
     }
+    .headingWidthanother{
+    	width: 500px;
+    }
   }
   @media (max-width: 780px) {
+  	.engIcon{
+   	width: 30px;
+   	height: 150px;
+   	display: block;
+   }
     #myVideo {
       display: none;
     }
@@ -64,6 +83,9 @@
     .headingWidth{
     	width: 180px;
     }
+    .headingWidthanother{
+    	width: 280px;
+    }
   }
   .content {
     background: rgba(0, 0, 0, 0.8);
@@ -87,9 +109,12 @@
 		<!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" id="mainSec" data-aos="fade-up">
-        <div class="section-title">
-          <p id="heading" style="color: #ffffff;">SMSE Engagement Pods</p>
+      	<div class="section-title text-center">
+          <p id="heading" class="text-center content headingWidthanother" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</p>
         </div>
+        <!-- <div class="section-title">
+          <p id="heading" style="color: #ffffff;">SMSE Engagement Pods</p>
+        </div> -->
         <div class="row">
           <div class="col-lg-5 order-1 order-lg-2 imgDiv imgMdl" data-aos="fade-left" data-aos-delay="100">
             <img src="assets/icons/social-network.png" class="img-fluid socImage" alt="">
@@ -165,129 +190,129 @@
 
       </div>
     </section>
-    <!-- ======= Testimonials Section ======= -->
+    <!-- ======= slider Section ======= -->
     <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <p style="color: #ffffff;">Click & Join</p>
+      <div class="container" id="joinNow">
+      	<div class="section-title text-center" data-aos="zoom-out">
+          <p id="heading" class="text-center content headingWidth" style="color: #ffffff; margin-left: auto; margin-right: auto;">Join Now</p>
         </div>
+
 
         <div class="owl-carousel testimonials-carousel" data-aos="fade-up">
 
-          <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSEntrpreneurs" style="color: #000; text-decoration: none;">
-              <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Entrepreneurs</h3>
+              <div class="card-body text-center">
+              	<img src="assets/engagement-pods/ent.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Entrepreneurs</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSEFashionBeauty" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Fashion & Beauty</h3>
+              	<img src="assets/engagement-pods/fashion.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Fashion & Beauty</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSEFitnessHealth" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Fitness & Health</h3>
+              	<img src="assets/engagement-pods/fitness.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Fitness & Health</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSELadies" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Ladies</h3>
+              	<img src="assets/engagement-pods/lady.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Ladies</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSE1kAccess" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">1k Access</h3>
+              	<img src="assets/engagement-pods/1k.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">1k Access</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSE5kAccess" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">5k Access</h3>
+              	<img src="assets/engagement-pods/5k.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">5k Access</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSE8kAccess" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">8k Access</h3>
+              	<img src="assets/engagement-pods/8k.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">8k Access</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSE10kAccess" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">10k Access</h3>
+              	<img src="assets/engagement-pods/10k.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">10k Access</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSE15kAccess" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">15k Access</h3>
+              	<img src="assets/engagement-pods/15k.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">15k Access</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/SMSEGentlemen" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Gentlemen</h3>
+              	<img src="assets/engagement-pods/men.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Gentlemen</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/joinchat/SQRWRxvdcuIb3gQIiKFcVg" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Pets</h3>
+              	<img src="assets/engagement-pods/pet.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Pets</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/joinchat/SQRWRxJ5Z5I8WJPseBgDkg" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Foods & Travels</h3>
+              	<img src="assets/engagement-pods/travel.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Foods & Travels</h5>
               </div>
           	</a>
            </div>
 
-           <div class="card text-center" data-aos="zoom-in" data-aos-delay="200">
+           <div class="card text-center h-100 shadow engCard" data-aos="zoom-in" data-aos-delay="200">
           	<a href="https://t.me/joinchat/SQRWRxuBvG00MUBwxqJYLA" style="color: #000; text-decoration: none;">
               <div class="card-body">
-              	<img src="assets/engagement-pods/Entrepreneurs.png" height="150">
-                <h3 class="card-title font-weight-bold mt-1">Videographers & Photographers</h3>
+              	<img src="assets/engagement-pods/video.png" class="engIcon">
+                <h5 class="card-title font-weight-bold mt-3">Videographers & Photographers</h5>
               </div>
           	</a>
            </div>
@@ -298,6 +323,67 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End slider Section -->
+
+    <section id="about" class="about">
+      <div class="container mb-4" id="mainSec" data-aos="fade-up">
+      	<div class="section-title text-center" data-aos="zoom-out">
+          <p id="heading" class="text-center content" style="color: #ffffff; margin-left: auto; margin-right: auto;">Still Not Convinced About SMSE Engagement Pods?</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-5 order-1 order-lg-2 imgDiv" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/icons/growth-chart.svg" class="img-fluid socImage" alt="">
+          </div>
+          <div class="col-lg-7 pt-lg-0 order-2 order-lg-1 sectionDiv" style="color: #fff;" data-aos="fade-right" data-aos-delay="100">
+          	<div class="row">
+          		<div class="col-12 content py-4 px-4">
+          			<h4 class="font-weight-bold">Boost in Engagement Rate</h4>
+          			<p class="text-justify">
+	                SMSE Instagram Engagement Groups are communities of Instagrammers that come together to help each other improve their Instagram engagement. By joining an Instagram engagement pod you get free Instagram likes and comments that give a boost to your Instagram engagement rate!
+	              </p>
+          		</div>
+          		<div class="col-12 content my-4 py-4 px-4">
+          			<h4 class="font-weight-bold">Increased Organic Reach</h4>
+          			<p class="text-justify">
+	                Increased engagement helps users reach the top post and explore page of Instagram which further helps in attracting organic growth and natural outreach. Additionally, Instagram engagement pods are a great way to meet Like-Minded Instagrammers, Influencers, Bloggers, and many more!
+	              </p>
+          		</div>
+          	</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container mt-4 pb-4" id="mainSec" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-5 order-1 pt-4 order-lg-1 imgDiv" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/icons/social.svg" class="img-fluid socImage mt-2" alt="">
+          </div>
+          <div class="col-lg-7 pt-lg-0 order-2 order-lg-2 sectionDiv" style="color: #fff;" data-aos="fade-right" data-aos-delay="100">
+          	<div class="row">
+          		<div class="col-12 content py-4 px-4">
+          			<h4 class="font-weight-bold">Explore your Niche-Community: Find Your Tribe</h4>
+          			<p class="text-justify">
+	                Instagram’s explore page algorithm boosts your content if your follower base is niche-specific. With SMSE Engagement Pods comprising 13 different group categories, you can choose your niche audience and expand within that community. For example: If you are interested in Fashion & Beauty, you will have access to thousands of other Fashion & Beauty Enthusiast to collaborate with, be inspired by, and help to grow your brand.
+	              </p>
+          		</div>
+          		<div class="col-12 content my-4 py-4 px-4">
+          			<h4 class="font-weight-bold">High Quality Engagement</h4>
+          			<p class="text-justify">
+	                SMSE utilizes advanced bots and a team of administrators to ensure that you get relevant and high-quality comments on Instagram via our Instagram pod groups. In addition, our Instagram pod rules are designed to ensure you get the best engagement possible!
+	              </p>
+          		</div>
+          	</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="container">
+      	<div class="col-12 content text-center py-3 px-3">
+      		<h5 class="font-weight-bold font-style-italic" style="color: #fff;">100% genuine and organic! It’s as simple as 1-2-3! Above all, it costs nothing to join our SMSE Instagram Engagement Pod!</h5>
+      		<a class="btn roundedButton2 mt-2 shadow" href="#joinNow">JOIN NOW</a>
+      	</div>
+      </div>
+    </section>
 </main>
 </div>
