@@ -427,7 +427,8 @@
       <div class="container mt-0 mb-4" data-aos="fade-right" data-aos-delay="100">
         <div class="col-12 content text-center py-3 px-3">
           <h5 class="font-weight-bold font-style-italic" style="color: #fff;">100% genuine and organic! It’s as simple as 1-2-3! Above all, it costs nothing to join our SMSE Instagram Engagement Pod!</h5>
-          <a class="btn roundedButton2 mt-2 shadow" href="#joinNow">JOIN NOW</a>
+          <h4 class="text-center font-weight-bold" style="color: #fff;">JOIN NOW</h4>
+          <!-- <a class="btn roundedButton2 mt-2 shadow" href="#joinNow">JOIN NOW</a> -->
         </div>
       </div>
     </section>
