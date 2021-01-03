@@ -259,7 +259,7 @@
                 <a href="https://t.me/SMSE8kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/10k.png" class="engIcon">
+                      <img src="assets/engagement-pods/8k.png" class="engIcon">
                     </div>
                   </div>
                 <h5 class="card-title font-weight-bold mt-3">8k Access</h5>	
