@@ -86,10 +86,10 @@
 </style>
 </head>
 <body>
-	<video autoplay muted loop id="myVideo">
+	<video autoplay muted loop playsinline id="myVideo">
 	  <source src="assets/videos/v1.mp4" type="video/mp4">
 	</video>
-	<video autoplay muted loop id="myVideo2">
+	<video autoplay muted loop playsinline id="myVideo2">
 	  <source src="assets/videos/video2.mp4" type="video/mp4">
 	</video>
 	<div class="content container">

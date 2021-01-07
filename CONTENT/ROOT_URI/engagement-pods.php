@@ -29,6 +29,11 @@
     width: 150px;
     border-radius: 50%;
   }
+  .menus2 {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
 
   .menuTitle {
     color: #fff;
@@ -71,14 +76,37 @@
   }
 
   @media (max-width: 780px) {
+  	.card-body{
+  		padding: .7rem;
+  	}
+  	.mainHeading{
+  		padding-top: 10px;
+  		padding-bottom: 10px;
+  		margin-top: 25px;
+  	}
+  	.iconText{
+  		font-size: .9em;
+  		text-align: center;
+  		margin-left: 10px;
+  	}
+  	.iconTextS{
+  		font-size: .8em;
+  		text-align: left;
+  	}
     .engIcon {
     	width: 100%;
       height: 100%;
     }
 
     .menus {
-      height: 140px;
-      width: 140px;
+      height: 4.2em;
+      width: 4.2em;
+      border-radius: 50%;
+      margin-top: 2%;
+    }
+    .menus2 {
+      height: 3.6em;
+      width: 3.6em;
       border-radius: 50%;
       margin-top: 2%;
     }
@@ -112,7 +140,7 @@
 
     #heading {
       font-size: 1.4em;
-      margin-top: 15%;
+      margin-top: 5%;
     }
 
     .headingWidth {
@@ -121,6 +149,12 @@
 
     .headingWidthanother {
       width: 280px;
+    }
+    .accessDiv{
+    	padding-left: 0px;
+    }
+    .iconDiv{
+    	padding-left: 2.3%;
     }
   }
 
@@ -134,10 +168,10 @@
 </style>
 
 <!-- ======= Hero Section ======= -->
-<video autoplay muted loop id="myVideo">
+<video autoplay muted loop playsinline id="myVideo">
   <source src="assets/videos/v1.mp4" type="video/mp4">
 </video>
-<video autoplay muted loop id="myVideo2">
+<video autoplay muted loop playsinline id="myVideo2">
   <source src="assets/videos/video2.mp4" type="video/mp4">
 </video>
 
@@ -146,7 +180,7 @@
 
     <section id="about" class="pb-0 ">
       <div class="container" id="mainSec" data-aos="fade-up">
-        <div class="section-title text-center content headingWidthanother mx-auto py-2 mb-4 px-3">
+        <div class="section-title text-center content headingWidthanother mx-auto py-2 mb-4 px-3 mainHeading">
           <h1 id="heading" class="font-weight-bold" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</h1>
           <h5 style="color: #ffffff;">Select your category of choice and join our pod groups for FREE!</h5>
         </div>
@@ -154,135 +188,135 @@
           <div class="col-md-12 col-sm-12 mx-auto py-3">
             <img src="assets/engagement-pods/banner.jpg" style="height: auto; width: 100%;">
           </div>
-            <div class="row py-3 text-center mx-auto">
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+            <div class="row py-3 text-center mx-auto px-1">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/SMSEntrpreneurs" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto" style="">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/ent.png" class="engIcon">
                     </div>
                   </div>
-                  <h5 class="card-title font-weight-bold mt-3">Entrepreneurs</h5>
+                  <h5 class="card-title iconTextS font-weight-bold mt-3">Entrepreneurs</h5>
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/SMSEFashionBeauty" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/fashion.png" style="height: 100%;">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Fashion & Beauty</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">Fashion & Beauty</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/SMSEFitnessHealth" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/fitness.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Fitness & Health</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">Fitness & Health</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/SMSEGentlemen" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/men.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Gentlemen</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">Gentlemen</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/SMSELadies" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/lady.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Ladies</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">Ladies</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/joinchat/SQRWRxvdcuIb3gQIiKFcVg" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/pet.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Pets</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">Pets</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/joinchat/SQRWRxJ5Z5I8WJPseBgDkg" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/travel.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Foods & Travels</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">Foods & Travels</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 mx-auto">
+              <div class="col-3 iconDiv mx-auto">
                 <a href="https://t.me/joinchat/SQRWRxuBvG00MUBwxqJYLA" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/video.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">Videographers & Photographers</h5>	
+                <h5 class="card-title iconTextS font-weight-bold mt-3 text-center">Videographers & Photographers</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-2 mx-auto">
+              <div class="col-2 mx-auto accessDiv">
                 <a href="https://t.me/SMSE1kAccess" style="color: #fff; text-decoration: none;">
-                  <div class="card menus mx-auto">
+                  <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/1k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">1k Access</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">1k Access</h5>	
                 </a>
               </div>
-               <div class="col-xs-6 col-sm-6 col-md-2 mx-auto">
+               <div class="col-2 accessDiv mx-auto">
                 <a href="https://t.me/SMSE5kAccess" style="color: #fff; text-decoration: none;">
-                  <div class="card menus mx-auto">
+                  <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/5k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">5k Access</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">5k Access</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-2 mx-auto">
-                <a href="https://t.me/SMSE8kAccess" style="color: #fff; text-decoration: none;">
-                  <div class="card menus mx-auto">
+              <div class="col-2 accessDiv mx-auto">
+                <a href="https://t.me/SMSE8kAccess" style="color: #fff; text-decoration: none; text-align: center;">
+                  <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/8k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">8k Access</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">8k Access</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-2 mx-auto">
+              <div class="col-2 accessDiv mx-auto">
                 <a href="https://t.me/SMSE10kAccess" style="color: #fff; text-decoration: none;">
-                  <div class="card menus mx-auto">
+                  <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/10k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">10k Access</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">10k Access</h5>	
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-2 mx-auto">
+              <div class="col-2 accessDiv mx-auto">
                 <a href="https://t.me/SMSE15kAccess" style="color: #fff; text-decoration: none;">
-                  <div class="card menus mx-auto">
+                  <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/15k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title font-weight-bold mt-3">15k Access</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3">15k Access</h5>	
                 </a>
               </div>
             </div>
