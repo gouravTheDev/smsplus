@@ -13,6 +13,10 @@
     width: 100%;
     height: 100%;
   }
+  .longIcon{
+  	width: 100%;
+    height: 100%;	
+  }
 
   .engCard {
     transition: transform .2s;
@@ -84,10 +88,14 @@
   		padding-bottom: 10px;
   		margin-top: 25px;
   	}
+  	.longIcon{
+	    height: 2.9em;	
+	    width: auto;
+	    margin-top: 1px;
+	  }
   	.iconText{
-  		font-size: .9em;
+  		font-size: .75em;
   		text-align: center;
-  		margin-left: 10px;
   	}
   	.iconTextS{
   		font-size: .8em;
@@ -95,7 +103,7 @@
   	}
     .engIcon {
     	width: 100%;
-      height: 100%;
+        height: 100%;
     }
 
     .menus {
@@ -148,7 +156,9 @@
     }
 
     .headingWidthanother {
-      width: 280px;
+      width: 100%;
+      margin-left: 20px;
+      margin-right: 20px;
     }
     .accessDiv{
     	padding-left: 0px;
@@ -189,27 +199,27 @@
             <img src="assets/engagement-pods/banner.jpg" style="height: auto; width: 100%;">
           </div>
             <div class="row py-3 text-center mx-auto px-1">
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/SMSEntrpreneurs" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto" style="">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/ent.png" class="engIcon">
                     </div>
                   </div>
-                  <h5 class="card-title iconTextS font-weight-bold mt-3">Entrepreneurs</h5>
+                  <h5 class="card-title iconText font-weight-bold mt-3">Entrepreneurs</h5>
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/SMSEFashionBeauty" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/fashion.png" style="height: 100%;">
+                      <img src="assets/engagement-pods/fashion.png" class="longIcon">
                     </div>
                   </div>
                 <h5 class="card-title iconText font-weight-bold mt-3">Fashion & Beauty</h5>	
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/SMSEFitnessHealth" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
@@ -219,7 +229,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">Fitness & Health</h5>	
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/SMSEGentlemen" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
@@ -229,7 +239,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">Gentlemen</h5>	
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/SMSELadies" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
@@ -239,7 +249,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">Ladies</h5>	
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/joinchat/SQRWRxvdcuIb3gQIiKFcVg" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
@@ -249,7 +259,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">Pets</h5>	
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/joinchat/SQRWRxJ5Z5I8WJPseBgDkg" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
@@ -259,17 +269,17 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">Foods & Travels</h5>	
                 </a>
               </div>
-              <div class="col-3 iconDiv mx-auto">
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/joinchat/SQRWRxuBvG00MUBwxqJYLA" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
                       <img src="assets/engagement-pods/video.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconTextS font-weight-bold mt-3 text-center">Videographers & Photographers</h5>	
+                <h5 class="card-title iconText font-weight-bold mt-3 text-center">Videographers & Photographers</h5>	
                 </a>
               </div>
-              <div class="col-2 mx-auto accessDiv">
+              <div class="col-2 px-0 mx-auto accessDiv">
                 <a href="https://t.me/SMSE1kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
@@ -279,7 +289,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">1k Access</h5>	
                 </a>
               </div>
-               <div class="col-2 accessDiv mx-auto">
+               <div class="col-2 px-0 accessDiv mx-auto">
                 <a href="https://t.me/SMSE5kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
@@ -289,7 +299,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">5k Access</h5>	
                 </a>
               </div>
-              <div class="col-2 accessDiv mx-auto">
+              <div class="col-2 px-0 accessDiv mx-auto">
                 <a href="https://t.me/SMSE8kAccess" style="color: #fff; text-decoration: none; text-align: center;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
@@ -299,7 +309,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">8k Access</h5>	
                 </a>
               </div>
-              <div class="col-2 accessDiv mx-auto">
+              <div class="col-2 px-0 accessDiv mx-auto">
                 <a href="https://t.me/SMSE10kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
@@ -309,7 +319,7 @@
                 <h5 class="card-title iconText font-weight-bold mt-3">10k Access</h5>	
                 </a>
               </div>
-              <div class="col-2 accessDiv mx-auto">
+              <div class="col-2 px-0 accessDiv mx-auto">
                 <a href="https://t.me/SMSE15kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
@@ -327,7 +337,7 @@
     <section id="about" class="pb-0 about">
       <div class="container" id="mainSec" data-aos="fade-up">
         <div class="section-title text-center mt-0">
-          <p id="heading" class="text-center content headingWidthanother mt-0" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</p>
+          <h3 id="" class="text-center content headingWidthanother mt-0 py-2 font-weight-bold text-uppercase" style="color: #ffffff; margin-left: auto; margin-right: auto; ">SMSE Engagement Pods</h3>
         </div>
         <div class="row">
           <div class="col-lg-5 order-1 order-lg-2 imgDiv imgMdl" data-aos="fade-left" data-aos-delay="100">
