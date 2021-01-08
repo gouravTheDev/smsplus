@@ -155,7 +155,10 @@
       height: 3.6em;
       width: 3.6em;
       border-radius: 50%;
-      margin-top: 2%;
+      margin-top: 0;
+    }
+    .menus2 .card-body{
+    	padding: 8px;
     }
 
     #myVideo {
@@ -322,7 +325,7 @@
                 <a href="https://t.me/SMSE1kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/1k.png" class="engIcon">
+                      <img src="assets/engagement-pods/1k.png" style="height: 100%; width: 100%;">
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">1k Access</h5>	
