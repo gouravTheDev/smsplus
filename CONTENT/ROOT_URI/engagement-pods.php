@@ -5,11 +5,6 @@
 <?php include '_menu.php'; ?>
 
 <style type="text/css">
-@media screen and (max-device-width: 480px){
-  body{
-    -webkit-text-size-adjust: none;
-  }
-}
   #topSection {
     background-image: linear-gradient(to right top, #110c80, #1b1182, #221584, #291a86, #2f1e88, #322c91, #35399a, #3a46a2, #425db1, #5073be, #6189c9, #779fd3);
     ;
@@ -101,10 +96,12 @@
   	.iconText{
   		font-size: .75em;
   		text-align: center;
+  		-webkit-text-size-adjust: none;
   	}
   	.iconTextS{
   		font-size: .8em;
   		text-align: left;
+  		-webkit-text-size-adjust: none;
   	}
     .engIcon {
     	width: 100%;
