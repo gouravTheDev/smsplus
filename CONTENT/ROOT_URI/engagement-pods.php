@@ -111,6 +111,9 @@
   .textShadowSm{
   	text-shadow: 4px 4px 4px #0B3EC8;
   }
+  .headingM{
+  	font-size: 1.1em;
+  }
   	.card-body{
   		padding: .7rem;
   	}
@@ -224,7 +227,7 @@
     <section id="about" class="pb-0 ">
       <div class="container" id="mainSec" data-aos="fade-up">
         <div class="section-title text-center content headingWidthanother mx-auto py-2 mb-4 px-3 mainHeading">
-          <h1 class="font-weight-bold textShadow" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</h1>
+          <h1 class="font-weight-bold textShadow headingM" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</h1>
           <h5 style="color: #ffffff;" class="textShadowSm">Select your category of choice and join our pod groups for FREE!</h5>
         </div>
         <div class="content">
