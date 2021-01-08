@@ -221,7 +221,7 @@
   <source src="assets/videos/video2.mp4" type="video/mp4">
 </video>
 
-<div class="content" id="topSection" style="margin-top: 5%;">
+<div class="content" style="margin-top: 5%;">
   <main id="main">
 
     <section id="about" class="pb-0 ">
