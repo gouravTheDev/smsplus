@@ -239,7 +239,7 @@
                 <a href="https://t.me/SMSEntrpreneurs" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto" style="">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/ent.png" class="engIcon">
+                      <img src="assets/engagement-pods/ent.png" height="100%;">
                     </div>
                   </div>
                   <h5 class="card-title iconText mt-3">Entrepreneurs</h5>
