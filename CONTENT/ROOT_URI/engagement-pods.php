@@ -91,6 +91,13 @@
   }
 
   @media (max-width: 380px) {
+  	.textShadow{
+  	text-shadow: 6px 6px 5px #0B3EC8;
+
+  }
+  .textShadowSm{
+  	text-shadow: 6px 6px 4px #0B3EC8;
+  }
   	.iconText{
   		font-size: .68em;
   		text-align: center;
@@ -105,11 +112,11 @@
 
   @media (max-width: 780px) {
   	.textShadow{
-  	text-shadow: 4px 5px 5px #0B3EC8;
+  	text-shadow: 6px 6px 5px #0B3EC8;
 
   }
   .textShadowSm{
-  	text-shadow: 4px 4px 4px #0B3EC8;
+  	text-shadow: 6px 6px 4px #0B3EC8;
   }
   .headingM{
   	font-size: 2.2em;
