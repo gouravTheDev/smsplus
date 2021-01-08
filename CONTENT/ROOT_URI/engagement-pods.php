@@ -125,7 +125,7 @@
   	.longIcon{
 	    height: 2.9em;	
 	    width: auto;
-	    margin-top: 1px;
+	    margin-top: 0px;
 	  }
   	.iconText{
   		font-size: .76em;
@@ -239,7 +239,7 @@
                 <a href="https://t.me/SMSEntrpreneurs" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto" style="">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/ent.png" style="height: 100%; width: auto;">
+                      <img src="assets/engagement-pods/ent.png" class="longIcon">
                     </div>
                   </div>
                   <h5 class="card-title iconText mt-3">Entrepreneurs</h5>
