@@ -112,7 +112,7 @@
   	text-shadow: 4px 4px 4px #0B3EC8;
   }
   .headingM{
-  	font-size: 1.1em;
+  	font-size: 2.2em;
   }
   	.card-body{
   		padding: .7rem;
