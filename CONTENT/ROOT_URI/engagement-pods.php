@@ -5,9 +5,12 @@
 <?php include '_menu.php'; ?>
 
 <style type="text/css">
-  #topSection {
+  /*#topSection {
     background-image: linear-gradient(to right top, #110c80, #1b1182, #221584, #291a86, #2f1e88, #322c91, #35399a, #3a46a2, #425db1, #5073be, #6189c9, #779fd3);
     ;
+  }*/
+  #topSection{
+  	background: black;
   }
   .textShadow{
   	text-shadow: 4px 5px 2px #2A5FEB;
@@ -221,7 +224,7 @@
   <source src="assets/videos/video2.mp4" type="video/mp4">
 </video>
 
-<div class="content" style="margin-top: 5%;">
+<div class="content" id="topSection" style="margin-top: 5%;">
   <main id="main">
 
     <section id="about" class="pb-0 ">
