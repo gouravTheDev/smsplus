@@ -79,6 +79,19 @@
     }
   }
 
+  @media (max-width: 380px) {
+  	.iconText{
+  		font-size: .68em;
+  		text-align: center;
+  		-webkit-text-size-adjust: none;
+  	}
+  	.iconTextS{
+  		font-size: .7em;
+  		text-align: left;
+  		-webkit-text-size-adjust: none;
+  	}
+  }
+
   @media (max-width: 780px) {
   	.card-body{
   		padding: .7rem;
@@ -208,7 +221,7 @@
                       <img src="assets/engagement-pods/ent.png" class="engIcon">
                     </div>
                   </div>
-                  <h5 class="card-title iconText font-weight-bold mt-3">Entrepreneurs</h5>
+                  <h5 class="card-title iconText mt-3">Entrepreneurs</h5>
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -218,7 +231,7 @@
                       <img src="assets/engagement-pods/fashion.png" class="longIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">Fashion & Beauty</h5>	
+                <h5 class="card-title iconText mt-3">Fashion & Beauty</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -228,7 +241,7 @@
                       <img src="assets/engagement-pods/fitness.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">Fitness & Health</h5>	
+                <h5 class="card-title iconText mt-3">Fitness & Health</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -238,7 +251,7 @@
                       <img src="assets/engagement-pods/men.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">Gentlemen</h5>	
+                <h5 class="card-title iconText mt-3">Gentlemen</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -248,7 +261,7 @@
                       <img src="assets/engagement-pods/lady.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">Ladies</h5>	
+                <h5 class="card-title iconText mt-3">Ladies</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -258,7 +271,7 @@
                       <img src="assets/engagement-pods/pet.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">Pets</h5>	
+                <h5 class="card-title iconText mt-3">Pets</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -268,7 +281,7 @@
                       <img src="assets/engagement-pods/travel.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">Foods & Travels</h5>	
+                <h5 class="card-title iconText mt-3">Foods & Travels</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
@@ -278,7 +291,7 @@
                       <img src="assets/engagement-pods/video.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3 text-center">Videographers & Photographers</h5>	
+                <h5 class="card-title iconText mt-3 text-center">Videographers & Photographers</h5>	
                 </a>
               </div>
               <div class="col-2 px-0 mx-auto accessDiv">
@@ -288,7 +301,7 @@
                       <img src="assets/engagement-pods/1k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">1k Access</h5>	
+                <h5 class="card-title iconText mt-3">1k Access</h5>	
                 </a>
               </div>
                <div class="col-2 px-0 accessDiv mx-auto">
@@ -298,7 +311,7 @@
                       <img src="assets/engagement-pods/5k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">5k Access</h5>	
+                <h5 class="card-title iconText mt-3">5k Access</h5>	
                 </a>
               </div>
               <div class="col-2 px-0 accessDiv mx-auto">
@@ -308,7 +321,7 @@
                       <img src="assets/engagement-pods/8k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">8k Access</h5>	
+                <h5 class="card-title iconText mt-3">8k Access</h5>	
                 </a>
               </div>
               <div class="col-2 px-0 accessDiv mx-auto">
@@ -318,7 +331,7 @@
                       <img src="assets/engagement-pods/10k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">10k Access</h5>	
+                <h5 class="card-title iconText mt-3">10k Access</h5>	
                 </a>
               </div>
               <div class="col-2 px-0 accessDiv mx-auto">
@@ -328,7 +341,7 @@
                       <img src="assets/engagement-pods/15k.png" class="engIcon">
                     </div>
                   </div>
-                <h5 class="card-title iconText font-weight-bold mt-3">15k Access</h5>	
+                <h5 class="card-title iconText mt-3">15k Access</h5>	
                 </a>
               </div>
             </div>
