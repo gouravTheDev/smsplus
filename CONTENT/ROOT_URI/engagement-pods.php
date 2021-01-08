@@ -9,12 +9,18 @@
     background-image: linear-gradient(to right top, #110c80, #1b1182, #221584, #291a86, #2f1e88, #322c91, #35399a, #3a46a2, #425db1, #5073be, #6189c9, #779fd3);
     ;
   }
+  .textShadow{
+  	text-shadow: 4px 5px 2px #0B3EC8;
+
+  }
+  .textShadowSm{
+  	text-shadow: 4px 4px 2px #0B3EC8;
+  }
   .engIcon {
     width: 100%;
     height: 100%;
   }
   .longIcon{
-  	width: 100%;
     height: 100%;	
   }
 
@@ -52,6 +58,11 @@
       min-width: 100%;
       min-height: 100%;
     }
+    .iconText{
+  		font-weight: bold;
+  		margin-bottom: 10%;
+  		-webkit-text-size-adjust: none;
+  	}
 
     #myVideo2 {
       display: none;
@@ -93,6 +104,13 @@
   }
 
   @media (max-width: 780px) {
+  	.textShadow{
+  	text-shadow: 4px 5px 5px #0B3EC8;
+
+  }
+  .textShadowSm{
+  	text-shadow: 4px 4px 4px #0B3EC8;
+  }
   	.card-body{
   		padding: .7rem;
   	}
@@ -107,7 +125,7 @@
 	    margin-top: 1px;
 	  }
   	.iconText{
-  		font-size: .75em;
+  		font-size: .76em;
   		text-align: center;
   		-webkit-text-size-adjust: none;
   	}
@@ -206,8 +224,8 @@
     <section id="about" class="pb-0 ">
       <div class="container" id="mainSec" data-aos="fade-up">
         <div class="section-title text-center content headingWidthanother mx-auto py-2 mb-4 px-3 mainHeading">
-          <h1 id="heading" class="font-weight-bold" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</h1>
-          <h5 style="color: #ffffff;">Select your category of choice and join our pod groups for FREE!</h5>
+          <h1 class="font-weight-bold textShadow" style="color: #ffffff; margin-left: auto; margin-right: auto;">SMSE Engagement Pods</h1>
+          <h5 style="color: #ffffff;" class="textShadowSm">Select your category of choice and join our pod groups for FREE!</h5>
         </div>
         <div class="content">
           <div class="col-md-12 col-sm-12 mx-auto py-3">
