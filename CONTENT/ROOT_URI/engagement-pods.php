@@ -23,6 +23,10 @@
     width: 100%;
     height: 100%;
   }
+  .followerIcon {
+    width: 100%;
+    height: 100%;
+  }
   .longIcon{
     height: 100%;	
   }
@@ -144,6 +148,10 @@
     	width: 100%;
         height: 100%;
     }
+    .followerIcon {
+      width: 100%;
+      height: 2.32em;
+    }
 
     .menus {
       height: 4.2em;
@@ -158,7 +166,7 @@
       margin-top: 0;
     }
     .menus2 .card-body{
-    	/*padding: 4px;*/
+    	padding: 8px;
     }
 
     #myVideo {
@@ -325,7 +333,7 @@
                 <a href="https://t.me/SMSE1kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/1k.png" style="height: 100%; width: 100%;">
+                      <img src="assets/engagement-pods/1k.png" class="followerIcon">
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">1k Access</h5>	
@@ -335,7 +343,7 @@
                 <a href="https://t.me/SMSE5kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/5k.png" class="engIcon">
+                      <img src="assets/engagement-pods/5k.png" class="followerIcon">
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">5k Access</h5>	
@@ -345,7 +353,7 @@
                 <a href="https://t.me/SMSE8kAccess" style="color: #fff; text-decoration: none; text-align: center;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/8k.png" class="engIcon">
+                      <img src="assets/engagement-pods/8k.png" class="followerIcon">
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">8k Access</h5>	
@@ -355,7 +363,7 @@
                 <a href="https://t.me/SMSE10kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/10k.png" class="engIcon">
+                      <img src="assets/engagement-pods/10k.png" class="followerIcon">
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">10k Access</h5>	
@@ -365,7 +373,7 @@
                 <a href="https://t.me/SMSE15kAccess" style="color: #fff; text-decoration: none;">
                   <div class="card menus2 mx-auto">
                     <div class="card-body text-center">
-                      <img src="assets/engagement-pods/15k.png" class="engIcon">
+                      <img src="assets/engagement-pods/15k.png" class="followerIcon">
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">15k Access</h5>	
