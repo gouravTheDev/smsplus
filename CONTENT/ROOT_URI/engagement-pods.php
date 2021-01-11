@@ -158,7 +158,7 @@
       margin-top: 0;
     }
     .menus2 .card-body{
-    	padding: 4px;
+    	/*padding: 4px;*/
     }
 
     #myVideo {
