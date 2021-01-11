@@ -280,6 +280,16 @@
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
+                <a href="https://t.me/joinchat/SQRWRxJ5Z5I8WJPseBgDkg" style="color: #fff; text-decoration: none;">
+                  <div class="card menus mx-auto">
+                    <div class="card-body text-center">
+                      <img src="assets/engagement-pods/travel.png" class="engIcon">
+                    </div>
+                  </div>
+                <h5 class="card-title iconText mt-3">Foods & Travels</h5> 
+                </a>
+              </div>
+              <div class="col-3 px-0 iconDiv mx-auto">
                 <a href="https://t.me/SMSEGentlemen" style="color: #fff; text-decoration: none;">
                   <div class="card menus mx-auto">
                     <div class="card-body text-center">
@@ -307,16 +317,6 @@
                     </div>
                   </div>
                 <h5 class="card-title iconText mt-3">Pets</h5>	
-                </a>
-              </div>
-              <div class="col-3 px-0 iconDiv mx-auto">
-                <a href="https://t.me/joinchat/SQRWRxJ5Z5I8WJPseBgDkg" style="color: #fff; text-decoration: none;">
-                  <div class="card menus mx-auto">
-                    <div class="card-body text-center">
-                      <img src="assets/engagement-pods/travel.png" class="engIcon">
-                    </div>
-                  </div>
-                <h5 class="card-title iconText mt-3">Foods & Travels</h5>	
                 </a>
               </div>
               <div class="col-3 px-0 iconDiv mx-auto">
