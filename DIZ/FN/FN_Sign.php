@@ -8,6 +8,9 @@
   $link = new mysqli(MYSQL_HOST,MYSQL_USER,MYSQL_PASS,MYSQL_DB);
   $link->set_charset("utf8");
 
+if(mysqli_connect_error()){
+   die("ERROR: UNABLE TO CONNECT: ".mysqli_connect_error());
+}
   function showErrorMsg($msg)
   {
     return '<div style="width: 100%; padding: 10px; text-align: center; font-weight: bold; background: #E7012A; color: #ffffff;">'.$msg.'</div>';
