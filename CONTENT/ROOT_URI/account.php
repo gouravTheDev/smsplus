@@ -226,8 +226,8 @@ if (!$_SESSION['LoggedIn']) {
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <label>Skype Id</label>
-                                        <input type="text" name="telegramId" class="form-control" placeholder="Skype Id" value="<?php echo $telegramId; ?>">
+                                        <label>Telegram Id</label>
+                                        <input type="text" name="telegramId" class="form-control" placeholder="Telegram Id" value="<?php echo $telegramId; ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
