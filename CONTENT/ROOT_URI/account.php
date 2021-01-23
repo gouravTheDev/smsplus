@@ -100,9 +100,6 @@ if (!$_SESSION['LoggedIn']) {
 
     //Upload Profile Picture
     if (isset($_POST['uploadProfilePic'])) {
-        if (file_exists("CONTENT/UPLOADS/PROFILE_PIC/" . $userId . "/" . $profilePic)) {
-            unlink("CONTENT/UPLOADS/PROFILE_PIC/" . $userId . "/" . $profilePic);
-        }
 
         $userId = $_SESSION["userId"];
 
@@ -112,11 +109,13 @@ if (!$_SESSION['LoggedIn']) {
         $fileName = $_FILES['profile_pic']['name'];
 
         $allowed = array('jpeg', 'png', 'jpg', 'svg');
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
-        echo $fileName;
+        $ext = pathinfo($fileName, PATHINFO_EXTENSION);
         if (!in_array($ext, $allowed)) {
             echo '<div class="container mt-3"><div class="alert alert-warning text-center">Please Upload an image!</div></div>';
         } else {
+            if (file_exists("CONTENT/UPLOADS/PROFILE_PIC/" . $userId . "/" . $profilePic)) {
+                unlink("CONTENT/UPLOADS/PROFILE_PIC/" . $userId . "/" . $profilePic);
+            }
             $fileName = basename($fileName);
 
             $fileName = str_replace(' ', '-', $fileName);
