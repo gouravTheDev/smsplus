@@ -36,6 +36,19 @@ if (isset($_GET['checkUserName'])){
 	}
 }
 
+// Check User Name edit
+if (isset($_GET['checkUserNameEdit'])){
+	$userName = $_GET['userName'];
+	$userId = $_GET['userId'];
+	$sql = "SELECT * FROM USERS WHERE `USER_NAME` = '$userName' AND `USER_ID` != '$userId'";
+	$result = mysqli_query($link, $sql);
+	if(mysqli_num_rows($result)>0){
+        $data = "present";
+	}else{
+		$data = null;
+	}
+}
+
 // Send back response
 $myObj = new stdClass();
 $myObj->data = $data;

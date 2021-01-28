@@ -50,11 +50,12 @@ if (!$_SESSION['LoggedIn']) {
     }
 
     //Update Basic info
-    if (isset($_POST['updateBasicDetails'])) {
+    if (isset($_POST['submitBasicFormDetails'])) {
         $userId = $_SESSION["userId"];
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $email = $_POST['email'];
+        $userName = $_POST['userName'];
 
         if (isset($_POST['password']) && $_POST['password'] != null) {
             $password = $_POST['password'];
@@ -65,17 +66,17 @@ if (!$_SESSION['LoggedIn']) {
                 echo '<div class="container mt-3"><div class="alert alert-danger text-center">Password must be 6 or more characters!</div></div>';
             } else {
                 $hashedPass = md5($password);
-                $stmt = $link->prepare("UPDATE `USERS` SET `FIRST_NAME` = ?, `LAST_NAME` = ?, `EMAIL` = ?, `PASSWORD` = ? WHERE `USER_ID` = ? ");
+                $stmt = $link->prepare("UPDATE `USERS` SET `FIRST_NAME` = ?, `LAST_NAME` = ?, `EMAIL` = ?, `PASSWORD` = ?, `USER_NAME` = ? WHERE `USER_ID` = ? ");
 
-                $stmt->bind_param("sssss", $firstName, $lastName, $email, $hashedPass, $userId);
+                $stmt->bind_param("ssssss", $firstName, $lastName, $email, $hashedPass, $userName, $userId);
                 if ($stmt->execute()) {
                     echo '<div class="container mt-3"><div class="alert alert-success text-center">Basic Details Updated Successfully!</div></div>';
                 }
             }
         } else {
-            $stmt = $link->prepare("UPDATE `USERS` SET `FIRST_NAME` = ?, `LAST_NAME` = ?, `EMAIL` = ? WHERE `USER_ID` = ? ");
+            $stmt = $link->prepare("UPDATE `USERS` SET `FIRST_NAME` = ?, `LAST_NAME` = ?, `EMAIL` = ?, `USER_NAME` = ? WHERE `USER_ID` = ? ");
 
-            $stmt->bind_param("ssss", $firstName, $lastName, $email, $userId);
+            $stmt->bind_param("sssss", $firstName, $lastName, $email, $userName, $userId);
             if ($stmt->execute()) {
                 echo '<div class="container mt-3"><div class="alert alert-success text-center">Basic Details Updated Successfully!</div></div>';
             }
@@ -160,8 +161,16 @@ if (!$_SESSION['LoggedIn']) {
                         <h3>Basic Information</h3>
                     </div>
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" id="basicForm">
+                            <input type="hidden" id="userId" value="<?php echo $userId; ?>">
                             <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label>User Name</label>
+                                        <input type="text" name="userName" class="form-control" placeholder="Enter Unique User Name" value="<?php echo $userName; ?>" id="userName" required>
+                                        <p class="mt-2" id="errorMsg" style="color: #F7462C; display: none;">User Name is already taken</p>
+                                    </div>
+                                </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <label>First Name</label>
@@ -196,8 +205,9 @@ if (!$_SESSION['LoggedIn']) {
                                 <div class="col-12 mt-0">
                                     <p class="mt-0" style="color: #F7462C;">Note: If you don't want to change password then leave these password fields empty!</p>
                                 </div>
+                                <input type="hidden" name="submitBasicFormDetails" value="yes">
                                 <div class="col-12 text-right">
-                                    <input type="submit" name="updateBasicDetails" class="btn btn-success" value="Save" style="color: #000;">
+                                    <input type="submit" name="updateBasicDetails" class="btn btn-success" value="Save" style="color: #000;" id="submitButtonBasic">
                                 </div>
                             </div>
                         </form>
@@ -261,5 +271,33 @@ if (!$_SESSION['LoggedIn']) {
         function submitForm() {
             document.getElementById('profileForm').submit();
         }
+
+        document.getElementById("submitButtonBasic").addEventListener("click", async function(event){
+
+          event.preventDefault();
+          var userName = document.getElementById('userName').value;
+          var userId = document.getElementById('userId').value;
+          var errorMsg = document.getElementById('errorMsg');
+
+          fetch('/API/V1/?checkUserNameEdit&userName='+userName+'&userId='+userId)
+          .then(function(response) {
+            if (response.status !== 200) {
+              console.log(
+                "Looks like there was a problem. Status Code: " + response.status
+              );
+              return;
+            }
+            response.json().then(function(data) {
+              if (data.data == 'present') {
+                errorMsg.style.display = "block";
+              }else{
+                document.getElementById("basicForm").submit();
+              }
+            });
+          })
+          .catch(function(err) {
+            console.log("Fetch Error :-S", err);
+          });
+        });
     </script>
 <?php } ?>

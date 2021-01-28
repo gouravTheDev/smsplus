@@ -19,7 +19,6 @@
     <!-- ============================================================== -->
     <script src="assets/dashboard/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/dashboard/plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/dashboard/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/dashboard/js/app-style-switcher.js"></script>
     <script src="assets/dashboard/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
@@ -31,9 +30,6 @@
     <script src="assets/dashboard/js/custom.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="assets/dashboard/plugins/bower_components/chartist/dist/chartist.min.js"></script>
-    <script src="assets/dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="assets/dashboard/js/pages/dashboards/dashboard1.js"></script>
 </body>
 
 </html>
