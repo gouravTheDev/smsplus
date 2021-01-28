@@ -278,6 +278,7 @@ if (!$_SESSION['LoggedIn']) {
           var userName = document.getElementById('userName').value;
           var userId = document.getElementById('userId').value;
           var errorMsg = document.getElementById('errorMsg');
+          errorMsg.style.display = "none";
 
           fetch('/API/V1/?checkUserNameEdit&userName='+userName+'&userId='+userId)
           .then(function(response) {
