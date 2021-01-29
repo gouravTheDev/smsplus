@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="alert alert-warning font-weight-bold text-center mt-3">
-                    No Orders made till now!
+                    No Orders
                 </div>
                 <div class="table-responsive p-0 mt-4">
                     <table class="table table-hover text-nowrap" id="activeStudentList">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 <div class="alert alert-warning font-weight-bold text-center mt-3">
-                    No Orders made till now!
+                    No Orders
                 </div>
                 <div class="table-responsive p-0 mt-4">
                     <table class="table table-hover text-nowrap" id="activeStudentList">
@@ -187,7 +187,7 @@
                     </div>
                 </div>
                 <div class="alert alert-warning font-weight-bold text-center mt-3">
-                    No Orders made till now!
+                    No Orders
                 </div>
                 <div class="table-responsive p-0 mt-4">
                     <table class="table table-hover text-nowrap" id="activeStudentList">
@@ -228,7 +228,7 @@
                     </div>
                 </div>
                 <div class="alert alert-warning font-weight-bold text-center mt-3">
-                    No Orders made till now!
+                    No Orders
                 </div>
                 <div class="table-responsive p-0 mt-4">
                     <table class="table table-hover text-nowrap" id="activeStudentList">
