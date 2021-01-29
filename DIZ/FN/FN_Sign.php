@@ -95,30 +95,28 @@ if(mysqli_connect_error()){
 
 //ADMIN SIGNIN
 
-if (isset($_POST['formName']) && $_POST['formName']=="adminSignIn"){
+if (isset($_POST['formName']) && $_POST['formName']=="AdminsignInForm"){
       $email = $_POST['email'];
 
       $password = $_POST['password'];
 
       $password = md5($password);
       // echo $password;
-      $sql = "SELECT * FROM ADMIN_USERS WHERE `EMAIL` = '$email'";
+      $sql = "SELECT * FROM ADMIN WHERE `EMAIL` = '$email'";
       $result = mysqli_query($link, $sql);
 
       $results = mysqli_num_rows($result);
       if($results==0){
-           echo "<script>alert('No user found! Please check the email!');</script>";
+          echo "<script>alert('You are not a valid user!');</script>";
       }else{
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $passwordDB = $row['PASSWORD'];
         if($password == $passwordDB){
             // echo '<div class="alert alert-success"> Welcome to Beanstalk Franchise Portal </div>';
             $_SESSION["AdminLoggedIn"]=true;
-            $_SESSION["userEmail"] = $email;
             $_SESSION["userId"] = $row['USER_ID'];
-            $_SESSION["userName"] = $row['NAME'];
             echo "<script>
-                window.location.href='/adminpanel/';
+                window.location.href='/admin/';
               </script>";
         }else{
             echo "<script>alert('Password is wrong!');</script>";

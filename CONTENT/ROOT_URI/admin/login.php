@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>SMS+ Login</title>
+	<title>SMS+ Admin Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="/assets/images/black-logo.png">
@@ -40,31 +40,8 @@
 	body {
 	  font-family: 'SinaNovaReg';
 	  color: #444444;
+	  background-image: linear-gradient(to right top, #175abe, #154da5, #13418d, #0f3576, #0b2960);
 	}
-  #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-  }
-  #myVideo2 {
-    display: none;
-  }
-  @media (max-width: 769px) {
-    #myVideo {
-      display: none;
-    }
-    /*Mobile*/
-    #myVideo2 {
-      display: block;
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%; 
-      min-height: 100%;
-    }
-  }
   .content {
     /*background: rgba(0, 0, 0, 0.6);*/
   }
@@ -86,20 +63,14 @@
 </style>
 </head>
 <body>
-	<video autoplay muted loop playsinline id="myVideo">
-	  <source src="assets/videos/v1.mp4" type="video/mp4">
-	</video>
-	<video autoplay muted loop playsinline id="myVideo2">
-	  <source src="assets/videos/video2.mp4" type="video/mp4">
-	</video>
 	<div class="content container">
 		<div class="col-md-6 mx-auto pt-4">
 			<div class="card shadow login-box">
 				<div class="card-body text-center">
 					<img src="/assets/images/logo.png" height="120" width="auto">
-					<h3 class="mt-3 mb-0 font-weight-bold">Member Login</h3>
+					<h3 class="mt-3 mb-0 font-weight-bold">Admin Login</h3>
 					<form method="POST">
-						<input type="hidden" name="formName" value="signInForm">
+						<input type="hidden" name="formName" value="AdminsignInForm">
 						<input type="hidden" name="s_Hash" value="<?php echo $_SESSION['s_Hash']; ?>">
 						<div class="mt-4 iFields">
 							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -122,12 +93,6 @@
 								<button type="submit" class="login100-form-btn" style="font-weight: bold; font-size: 1.2em;">
 									Login
 								</button>
-							</div>
-							<div class="text-center mt-3">
-								<a href="signup" style="color: #fff; font-size: 1.2em;" class="font-weight-bold" style="text-decoration: none;">New User? Sign Up!</a><br>
-	                            <a style="color: #fff; font-size: 1em;" href="/">
-	                                Go to Home
-	                            </a>
 							</div>
 						</div>
 					</form>

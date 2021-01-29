@@ -3,7 +3,7 @@
  	// $_SESSION['logout'];
     session_destroy();
     echo "<script>
-		 	window.location.href='login';
+		 	window.location.href='/admin/login';
 		 </script>";
     
 }

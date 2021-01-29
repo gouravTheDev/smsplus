@@ -9,10 +9,10 @@
     <!-- Favicon icon -->
     <link rel="icon" href="/assets/images/black-logo.png">
     <!-- Custom CSS -->
-    <link href="assets/dashboard/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="/assets/dashboard/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
-    <link href="assets/dashboard/css/style.min.css" rel="stylesheet">
+    <link href="/assets/dashboard/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/table.min.css">
     <style type="text/css">
         .btnSmm{
