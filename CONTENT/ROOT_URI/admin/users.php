@@ -57,7 +57,7 @@
                           }
                         } else {
                           echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
-                No ticket is raised till now!
+                No users till now!
             </div>';
                         }
                       }
