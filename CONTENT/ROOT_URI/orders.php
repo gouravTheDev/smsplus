@@ -1,4 +1,4 @@
-<title>SocialMySocial+ Tickets</title>
+<title>SocialMySocial+ Orders</title>
 
 <?php include '_menuL.php'; ?>
 <?php 
@@ -23,7 +23,6 @@
 </div>
 
 <div class="container-fluid pt-2">
-    <!-- <h1 class="text-center">Tickets</h1> -->
     <div class="col-md-10 col-sm-12 mx-auto">
         <div class="card card-tabs" >
           <div class="card-header p-0 pt-1">
@@ -63,7 +62,7 @@
                     </div>
                 </div>
                 <div class="alert alert-warning font-weight-bold text-center mt-3">
-                    No Orders made till now!
+                    No Orders
                 </div>
                 <div class="table-responsive p-0 mt-4">
                     <table class="table table-hover text-nowrap" id="activeStudentList">
