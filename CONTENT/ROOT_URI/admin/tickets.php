@@ -31,6 +31,7 @@
                       <th scope="col">Subject</th>
                       <th scope="col">Request</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody id="ticketListBody">
@@ -50,7 +51,12 @@
                          <td>' . $row['SUBJECT'] . '</td>
                          <td>' . $row['ORDER_ID'] . '</td>
                          <td>' . $row['REQUEST'] . '</td>
-                         <td>' . $row['STATUS'] . '</td>';
+                         <td>' . $row['STATUS'] . '</td>
+                         <td>
+                          <div class="btn-group">
+                            <a href="ticket-details?ticketid='.$row['TICKET_ID'].'" class="btn btn-primary"><i class="fas fa-external-link-alt"></i></a>
+                          </div>
+                         </td>';
                          $i++;
                           }
                         } else {
@@ -69,6 +75,7 @@
                       <th scope="col">Subject</th>
                       <th scope="col">Request</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Action</th>
                     </tr>
                   </tfoot>
                 </table>
