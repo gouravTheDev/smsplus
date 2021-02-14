@@ -8,7 +8,7 @@
   }
 </script>
 
-<?php include '_menu.php'; ?>
+<?php include '_menuL.php'; ?>
 <?php
 $ticketId = $_GET['ticketid'];
 
@@ -68,20 +68,6 @@ if ($userId && $userId != '') {
 <div class="container pt-4" style="height: 100%;">
     <div class="card shadow">
     	<div class="card-body">
-			 <div class="row">
-            <div class="col-md-12 col-sm-12 mb-2">
-            	<h3 class="font-weight-bold">User Details</h3>
-            </div>
-             <div class="col-md-4 col-sm-12 mb-2">
-            	<h5>Name:- <?php echo $firstName." ".$lastName;  ?></h5>
-            </div>
-             <div class="col-md-4 col-sm-12 mb-2">
-            	<h5>Email:- <?php echo $email;  ?></h5>
-            </div>
-             <div class="col-md-4 col-sm-12 mb-2">
-            	<h5>User Name:- <?php echo $userName;  ?></h5>
-            </div>
-        </div> 
         <div class="row mt-4">
             <div class="col-md-12 col-sm-12 mb-2">
             	<h3 class="font-weight-bold">Ticket Details</h3>
@@ -119,7 +105,7 @@ if ($userId && $userId != '') {
 		if($replyText && $replyText!=''){
 			$ticketId = $_POST['ticketId'];
 			$userId = $_SESSION['userId'];
-			$userRole = 'ADMIN';
+			$userRole = 'USER';
 			$replyId = "R-".D_create_UserId();
 			date_default_timezone_set("America/New_York");
 			$dateTime = date("Y-m-d")." ".date("h:i");

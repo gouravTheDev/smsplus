@@ -1,3 +1,8 @@
+<script>
+  if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+  }
+</script>
 <title>SocialMySocial+ Admin</title>
 <meta content="" name="descriptison">
 <meta content="" name="keywords">
@@ -30,7 +35,6 @@
                       <th scope="col">Order Id</th>
                       <th scope="col">Subject</th>
                       <th scope="col">Request</th>
-                      <th scope="col">Status</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -51,7 +55,6 @@
                          <td>' . $row['SUBJECT'] . '</td>
                          <td>' . $row['ORDER_ID'] . '</td>
                          <td>' . $row['REQUEST'] . '</td>
-                         <td>' . $row['STATUS'] . '</td>
                          <td>
                           <div class="btn-group">
                             <a href="ticket-details?ticketid='.$row['TICKET_ID'].'" class="btn btn-primary"><i class="fas fa-external-link-alt"></i></a>
@@ -74,7 +77,6 @@
                       <th scope="col">Order Id</th>
                       <th scope="col">Subject</th>
                       <th scope="col">Request</th>
-                      <th scope="col">Status</th>
                       <th scope="col">Action</th>
                     </tr>
                   </tfoot>

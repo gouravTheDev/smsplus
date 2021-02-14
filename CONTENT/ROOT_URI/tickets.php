@@ -1,8 +1,8 @@
 <title>SocialMySocial+ Tickets</title>
 <script>
-    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-    }
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
 </script>
 
 <?php include '_menuL.php'; ?>
@@ -38,10 +38,12 @@ if (isset($_POST['submitTicket'])) {
   $message = $_POST['message'];
 
   $ticketId = "T-".D_create_UserId();
+  date_default_timezone_set("America/New_York");
+  $dateTime = date("Y-m-d")." ".date("h:i");
 
-  $stmt = $link->prepare("INSERT INTO `TICKETS` (`USER_ID`, `TICKET_ID`, `SUBJECT`, `ORDER_ID`, `REQUEST`, `MESSAGE`) VALUES (?, ?, ?, ?, ?, ?)");
+  $stmt = $link->prepare("INSERT INTO `TICKETS` (`USER_ID`, `TICKET_ID`, `SUBJECT`, `ORDER_ID`, `REQUEST`, `MESSAGE`, `DATE_TIME`) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-  $stmt->bind_param("ssssss", $userId, $ticketId, $subject, $orderId, $request, $message);
+  $stmt->bind_param("sssssss", $userId, $ticketId, $subject, $orderId, $request, $message, $dateTime);
   if ($stmt->execute()) {
     echo '<div class="container mt-3"><div class="alert alert-success text-center">Ticket Raised Successfully!</div></div>';
   }else{
@@ -110,7 +112,7 @@ if (isset($_POST['submitTicket'])) {
                           <th scope="col">Order Id</th>
                           <th scope="col">Subject</th>
                           <th scope="col">Request</th>
-                          <th scope="col">Status</th>
+                          <th scope="col">Action</th>
                         </tr>
                       </thead>
                       <tbody id="ticketListBody">
@@ -130,7 +132,11 @@ if (isset($_POST['submitTicket'])) {
                              <td>' . $row['SUBJECT'] . '</td>
                              <td>' . $row['ORDER_ID'] . '</td>
                              <td>' . $row['REQUEST'] . '</td>
-                             <td>' . $row['STATUS'] . '</td>';
+                              <td>
+                          <div class="btn-group">
+                            <a href="ticket-details?ticketid='.$row['TICKET_ID'].'" class="btn btn-primary"><i class="fas fa-external-link-alt"></i></a>
+                          </div>
+                         </td>';
                              $i++;
                               }
                             } else {
@@ -148,7 +154,7 @@ if (isset($_POST['submitTicket'])) {
                           <th scope="col">Order Id</th>
                           <th scope="col">Subject</th>
                           <th scope="col">Request</th>
-                          <th scope="col">Status</th>
+                          <th scope="col">Action</th>
                         </tr>
                       </tfoot>
                     </table>

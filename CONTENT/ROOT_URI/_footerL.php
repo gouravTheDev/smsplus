@@ -34,7 +34,7 @@
       $(document).ready(() => {
         $('#ticketList').DataTable( {
           "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-          "order": [[ 0, "asc" ]]
+          "order": [[ 0, "desc" ]]
         });
       });
     </script>
