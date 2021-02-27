@@ -123,19 +123,49 @@ if ($_SESSION['AdminLoggedIn']) {
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/" aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
+                                <span class="hide-menu">Statistics</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users" aria-expanded="false">
-                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/orders/" aria-expanded="false">
+                                <i class="fa fa-archive" aria-hidden="true"></i>
+                                <span class="hide-menu">Orders</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/category/" aria-expanded="false">
+                                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Category</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/services/" aria-expanded="false">
+                                <i class="fa fa-th-list" aria-hidden="true"></i>
+                                <span class="hide-menu">Services</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/transaction/" aria-expanded="false">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                <span class="hide-menu">Transaction Logs</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/users" aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Users</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tickets" aria-expanded="false">
-                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/tickets" aria-expanded="false">
+                                <i class="fa fa-file" aria-hidden="true"></i>
                                 <span class="hide-menu">Tickets</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/system-settings" aria-expanded="false">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                <span class="hide-menu">System Settings</span>
                             </a>
                         </li>
                         <li class="text-center p-20 upgrade-btn">
