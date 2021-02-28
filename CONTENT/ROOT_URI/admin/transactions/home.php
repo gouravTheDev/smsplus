@@ -9,12 +9,12 @@
  <div class="page-breadcrumb bg-white">
    <div class="row align-items-center">
      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pt-2">
-       <h4 class="page-title text-uppercase font-medium font-14">Category List</h4>
+       <h4 class="page-title text-uppercase font-medium font-14">Transaction List</h4>
      </div>
      <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
        <div class="d-md-flex">
          <ol class="breadcrumb ml-auto">
-           <li><a href="#">Category/List</a></li>
+           <li><a href="#">Transaction/List</a></li>
          </ol>
        </div>
      </div>
@@ -22,49 +22,6 @@
  </div>
 
  <div class="container" style="height: 100%;">
-   <?php
-    // Add Category
-    if (isset($_POST['createCategory'])) {
-      $description = $_POST['description'];
-      $name = $_POST['name'];
-      $status = $_POST['status'];
-
-      $categoryId = "Cat-" . D_create_UserId();
-
-      $stmt = $link->prepare("INSERT INTO `CATEGORY` (`CATEGORY_ID`, `NAME`, `DESCRIPTION`, `STATUS`) VALUES (?, ?, ?, ?)");
-
-      $stmt->bind_param("ssss", $categoryId, $name, $description, $status);
-
-      if ($stmt->execute()) {
-        echo '<div class="container mt-3"><div class="alert alert-success text-center">Category Added Successfully</div></div>';
-      } else {
-        echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
-      }
-    }
-
-    // Edit Category
-    if (isset($_POST['updateCateory'])) {
-      $description = $_POST['editdescription'];
-      $name = $_POST['editname'];
-      $status = $_POST['editstatus'];
-      $categoryId =  $_POST['editcategoryId'];
-
-      $stmt = $link->prepare("UPDATE CATEGORY SET `NAME` = ?, `DESCRIPTION` = ?, `STATUS` = ? WHERE CATEGORY_ID = ?");
-
-      $stmt->bind_param("ssss", $name, $description, $status, $categoryId);
-
-      if ($stmt->execute()) {
-        echo '<div class="container mt-3"><div class="alert alert-success text-center">Category Updated Successfully</div></div>';
-      } else {
-        echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
-      }
-    }
-    ?>
-   <div class="row mt-3">
-     <div class="col-12">
-       <a href="add" class="btn btn-primary shadow" data-toggle="modal" data-target="#addCategoryModal"><i class="fa fa-plus"></i> Add Category</a>
-     </div>
-   </div>
    <div class="card shadow mt-4 mb-4">
      <div class="card-body">
        <div class="table-responsive p-0 mt-4">
@@ -79,7 +36,7 @@
            </thead>
            <tbody id="ticketListBody">
              <?php
-              $sql = "SELECT * FROM CATEGORY WHERE DELETED = 'FALSE'";
+              $sql = "SELECT * FROM Transaction WHERE DELETED = 'FALSE'";
               $result = mysqli_query($link, $sql);
               if ($result) {
                 if (mysqli_num_rows($result) > 0) {
@@ -105,7 +62,7 @@
                   }
                 } else {
                   echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
-                No Category Found!
+                No Transaction Found!
             </div>';
                 }
               }
@@ -144,9 +101,7 @@
              <div class="col-md-8 col-sm-12">
                <div class="form-group">
                  <label>Name</label>
-                 <p class="lead emoji-picker-container">
-                  <input type="text" class="form-control emojiPick" name="name" placeholder="Enter Category Name" required>
-                 </p>
+                 <input type="text" class="form-control " name="name" placeholder="Enter Category Name" required>
                </div>
              </div>
              <div class="col-md-4 col-sm-12">
@@ -188,19 +143,17 @@
        </div>
        <form method="POST">
          <input type="hidden" name="updateCateory">
-         <input type="hidden" name="editcategoryId" id="editcategoryId">
          <div class="modal-body">
            <div class="row">
+            <input type="hidden" class="form-control" name="editcategoryId" placeholder="Enter Category Name" id="editcategoryId" required>
 
-             <div class="col-md-9 col-sm-12">
+             <div class="col-md-8 col-sm-12">
                <div class="form-group">
                  <label>Name</label>
-                  <p class="lead emoji-picker-container">
-                  <input type="text" id="editname" class="form-control" name="editname" placeholder="Enter Category Name" required>
-                 </p>
+                 <input type="text" class="form-control" name="editname" placeholder="Enter Category Name" id="editname" required>
                </div>
              </div>
-             <div class="col-md-3 col-sm-12">
+             <div class="col-md-4 col-sm-12">
                <div class="form-group">
                  <label>Status</label>
                  <select class="form-control" name="editstatus" id="editstatus">
@@ -225,27 +178,28 @@
  </div>
 
  <!-- Edit Category ends -->
+
  <script>
-   CKEDITOR.replace('description');
-   CKEDITOR.replace('editdescription');
+   // CKEDITOR.replace('description');
+   // CKEDITOR.replace('editdescription');
  </script>
 
  <script type="text/javascript">
-  async function deleteCategory(categoryId) {
-    var result = confirm("Are you sure you want to delete?");
-    if (result) {
-      var response = await fetch("api/?deleteCategory&categoryId=" + categoryId);
-      response = await response.json();
-      window.location.reload();
-    }
+   async function deleteCategory(categoryId) {
+    // var result = confirm("Are you sure you want to delete?");
+    // if (result) {
+    //   var response = await fetch("api/?deleteCategory&categoryId=" + categoryId);
+    //   response = await response.json();
+    //   window.location.reload();
+    // }
   }
   async function fetchCategoryData(categoryId) {
-    var response = await fetch("api/?getCategoryData&categoryId=" + categoryId);
-    response = await response.json();
-    console.log(response);
-    document.getElementById('editname').value = response.NAME;
-    document.getElementById('editdescription').value = response.DESCRIPTION;
-    document.getElementById('editstatus').value = response.STATUS;
-    document.getElementById('editcategoryId').value = response.CATEGORY_ID;
+    // var response = await fetch("api/?getCategoryData&categoryId=" + categoryId);
+    // response = await response.json();
+    // console.log(response);
+    // document.getElementById('editname').value = response.NAME;
+    // document.getElementById('editdescription').value = response.DESCRIPTION;
+    // document.getElementById('editstatus').value = response.STATUS;
+    // document.getElementById('editcategoryId').value = response.CATEGORY_ID;
   }
  </script>

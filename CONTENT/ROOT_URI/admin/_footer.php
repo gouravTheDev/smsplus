@@ -30,7 +30,28 @@
     <script src="/assets/dashboard/js/custom.js"></script>
     <script src="/JS/datatable.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-    <script src="/JS/charts.js"></script>
+    <!-- <script src="/JS/charts.js"></script> -->
+
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+
+    <script src="/assets/emoji/lib/js/config.js"></script>
+    <script src="/assets/emoji/lib/js/util.js"></script>
+    <script src="/assets/emoji/lib/js/jquery.emojiarea.js"></script>
+    <script src="/assets/emoji/lib/js/emoji-picker.js"></script>
+
+     <script>
+      $(async function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+          emojiable_selector: '.emojiPick',
+          assetsPath: '/assets/emoji/lib/img/',
+          popupButtonClasses: 'fas fa-smile'
+        });
+        console.log(emojiPicker)
+        window.emojiPicker.discover();
+      });
+    </script>
 
 
     <script type="text/javascript">

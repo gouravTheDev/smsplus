@@ -94,7 +94,9 @@
              <div class="col-md-12 col-sm-12">
                <div class="form-group">
                  <label>Name</label>
-                 <input type="text" class="form-control" name="editname" placeholder="Enter Service Name" required value="<?php echo $name; ?>">
+                 <p class="lead emoji-picker-container">
+                  <input type="text" class="form-control emojiPick" name="editname" placeholder="Enter Service Name" required value="<?php echo $name; ?>" data-emojiable="true">
+                </p>
                </div>
              </div>
              <div class="col-md-12 col-sm-12">

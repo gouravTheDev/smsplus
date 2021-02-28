@@ -164,7 +164,9 @@
              <div class="col-md-12 col-sm-12">
                <div class="form-group">
                  <label>Name</label>
-                 <input type="text" class="form-control " name="name" placeholder="Enter Service Name" required>
+                  <p class="lead emoji-picker-container">
+                    <input type="text" class="form-control emojiPick" name="name" placeholder="Enter Service Name" required data-emojiable="true">
+                  </p>
                </div>
              </div>
              <div class="col-md-12 col-sm-12">
@@ -261,7 +263,7 @@
 
  <script>
    CKEDITOR.replace('description');
-   CKEDITOR.replace('editdescription');
+   // CKEDITOR.replace('editdescription');
  </script>
 
  <script type="text/javascript">

@@ -15,6 +15,8 @@
     <link href="/assets/dashboard/css/style.min.css" rel="stylesheet">
     <script type="text/javascript" src="/JS/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" href="/CSS/table.min.css">
+
+    <link href="/assets/emoji/lib/css/emoji.css" rel="stylesheet">
     <style type="text/css">
         .btnSmm{
             background: #2F90F0;

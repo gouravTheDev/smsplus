@@ -151,7 +151,7 @@ if ($_SESSION['AdminLoggedIn']) {
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/transaction/" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/transactions/" aria-expanded="false">
                                 <i class="fa fa-credit-card" aria-hidden="true"></i>
                                 <span class="hide-menu">Transaction Logs</span>
                             </a>
@@ -169,7 +169,7 @@ if ($_SESSION['AdminLoggedIn']) {
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/system-settings" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/system-settings/" aria-expanded="false">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
                                 <span class="hide-menu">System Settings</span>
                             </a>
