@@ -87,7 +87,7 @@
              <div class="table-responsive p-0 mt-4">
                <table class="table table-hover text-nowrap serviceList">
                  <thead>
-                   <tr>
+                   <tr style="text-align: center;">
                      <th scope="col">No.</th>
                      <th scope="col">Name</th>
                      <th scope="col">Service Type</th>
@@ -106,7 +106,7 @@
                       if (mysqli_num_rows($result) > 0) {
                         $i = 1;
                         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                          echo  '<tr>
+                          echo  '<tr style="text-align: center;">
                          <td>' . $i . '</td>
                          <td>' . $row['NAME'] . '</td>
                          <td>' . $row['typeName'] . '</td>
@@ -131,7 +131,7 @@
                     ?>
                  </tbody>
                  <tfoot>
-                   <tr>
+                   <tr style="text-align: center;">
                      <th scope="col">No.</th>
                      <th scope="col">Name</th>
                      <th scope="col">Service Type</th>
