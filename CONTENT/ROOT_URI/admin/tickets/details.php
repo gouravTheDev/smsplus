@@ -21,6 +21,7 @@ if ($result) {
         $userId = $row['USER_ID'];
         $subject = $row['SUBJECT'];
         $orderId = $row['ORDER_ID'];
+        $ticketStatus = $row['STATUS'];
         $request = $row['REQUEST'];
         $message = $row['MESSAGE'];
         $dateTime = $row['DATE_TIME'];
@@ -64,8 +65,11 @@ if ($userId && $userId != '') {
     </div>
 </div>
 
-<div class="container pt-4" style="height: 100%;">
+<div class="container pt-2" style="height: 100%;">
     <div class="row">
+        <div class="col-12 text-right mb-2">
+            <button class="btn btn-danger shadow" onclick="closeTicket(`<?php echo $ticketId;  ?>`)"><i class="fa fa-times-circle"></i> Close Ticket</button>
+        </div>
         <div class="col-md-4 col-sm-12">
             <div class="card shadow">
                 <div class="card-body">
@@ -84,8 +88,11 @@ if ($userId && $userId != '') {
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-md-12 col-sm-12 mb-2">
+                        <div class="col-md-12 col-sm-12 mb-1">
                             <h3 class="font-weight-bold">Ticket Details</h3>
+                        </div>
+                        <div class="col-md-12 col-sm-12 mb-2">
+                            <h3><span class="badge badge-warning" style="color: #000;"><?php echo $ticketStatus; ?></span></h3>
                         </div>
                         <div class="col-md-12 col-sm-12 mb-2">
                             <h5>Ticket Id:- <?php echo $ticketId;  ?></h5>
@@ -180,3 +187,14 @@ if ($userId && $userId != '') {
     </div>
 
 </div>
+
+ <script type="text/javascript">
+   async function closeTicket(ticketId) {
+    var result = confirm("Are you sure you want to close the ticket?");
+    if (result) {
+      var response = await fetch("api/?closeTicket&ticketId=" + ticketId);
+      response = await response.json();
+      window.location.reload();
+    }
+  }
+ </script>

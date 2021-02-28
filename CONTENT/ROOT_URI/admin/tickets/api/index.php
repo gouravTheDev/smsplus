@@ -16,6 +16,18 @@ if ($_SESSION['AdminLoggedIn']) {
 
 	}
 
+	if (isset($_GET['closeTicket'])) {
+	 $ticketId = $_GET['ticketId'];
+	 $sql = "UPDATE TICKETS SET STATUS = 'Closed' WHERE TICKET_ID = '$ticketId'";
+	 $result = mysqli_query($link,$sql);
+	 if ($result) {
+	    $data = json_encode("Ticket Updated!");
+	  }else{
+	    $data = null;
+	  }
+
+	}
+
 	echo $data;
 }
 ?>
