@@ -9,12 +9,12 @@
  <div class="page-breadcrumb bg-white">
    <div class="row align-items-center">
      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pt-2">
-       <h4 class="page-title text-uppercase font-medium font-14">Category List</h4>
+       <h4 class="page-title text-uppercase font-medium font-14">Services List</h4>
      </div>
      <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
        <div class="d-md-flex">
          <ol class="breadcrumb ml-auto">
-           <li><a href="#">Category/List</a></li>
+           <li><a href="#">Service/List</a></li>
          </ol>
        </div>
      </div>
@@ -24,7 +24,7 @@
  <div class="container" style="height: 100%;">
    <?php
     // Add Category
-    if (isset($_POST['createCategory'])) {
+    if (isset($_POST['createService'])) {
       $description = $_POST['description'];
       $name = $_POST['name'];
       $status = $_POST['status'];
@@ -62,7 +62,7 @@
     ?>
    <div class="row mt-3">
      <div class="col-12">
-       <a href="add" class="btn btn-primary shadow" data-toggle="modal" data-target="#addCategoryModal"><i class="fa fa-plus"></i> Add Category</a>
+       <a href="add" class="btn btn-primary shadow" data-toggle="modal" data-target="#addServiceModal"><i class="fa fa-plus"></i> Add Service</a>
      </div>
    </div>
    <div class="card shadow mt-4 mb-4">
@@ -79,6 +79,7 @@
            </thead>
            <tbody id="ticketListBody">
              <?php
+              $userId = $_SESSION["userId"];
               $sql = "SELECT * FROM CATEGORY WHERE DELETED = 'FALSE'";
               $result = mysqli_query($link, $sql);
               if ($result) {
@@ -97,8 +98,8 @@
                          <td>' . $categoryStatus . '</td>
                          <td>
                           <div class="btn-group">
-                            <button onclick= "fetchCategoryData(`'.$row['CATEGORY_ID'].'`)" data-toggle="modal" data-target="#editCategoryModal" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
-                            <button onclick= "deleteCategory(`'.$row['CATEGORY_ID'].'`)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                            <button onclick= "fetchCategoryData(`' . $row['CATEGORY_ID'] . '`)" data-toggle="modal" data-target="#editCategoryModal" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                            <button onclick= "deleteCategory(`' . $row['CATEGORY_ID'] . '`)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                           </div>
                          </td>';
                     $i++;
@@ -128,26 +129,91 @@
  <!-- Add Category starts -->
 
 
- <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <div class="modal fade" id="addServiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
    <div class="modal-dialog modal-lg" role="document">
      <div class="modal-content" style="background: #F7F0FA;">
        <div class="modal-header">
-         <h5 class="modal-title" id="exampleModalLongTitle">Create New Category</h5>
+         <h5 class="modal-title" id="exampleModalLongTitle">Create New Service</h5>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
          </button>
        </div>
        <form method="POST">
-         <input type="hidden" name="createCategory">
+         <input type="hidden" name="createService">
          <div class="modal-body">
            <div class="row">
-             <div class="col-md-8 col-sm-12">
+             <div class="col-md-12 col-sm-12">
                <div class="form-group">
                  <label>Name</label>
-                 <input type="text" class="form-control " name="name" placeholder="Enter Category Name" required>
+                 <input type="text" class="form-control " name="name" placeholder="Enter Service Name" required>
+               </div>
+             </div>
+             <div class="col-md-12 col-sm-12">
+               <div class="form-group">
+                 <label>Category Id</label>
+                 <select class="form-control" name="categoryId">
+                   <?php
+                    $sql = "SELECT * FROM CATEGORY WHERE DELETED = 'FALSE'";
+                    $result = mysqli_query($link, $sql);
+                    if ($result) {
+                      if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                    ?>
+                         <option value="$row['CATEGORY_ID']"><?php echo $row['NAME']; ?></option>
+                   <?php }
+                      }
+                    }
+                    ?>
+                 </select>
+               </div>
+             </div>
+             <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                 <label>Service Type</label>
+                 <select class="form-control" name="serviceType">
+                   <?php
+                    $sql = "SELECT * FROM SERVICE_TYPE WHERE DELETED = 'FALSE'";
+                    $result = mysqli_query($link, $sql);
+                    if ($result) {
+                      if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                    ?>
+                         <option value="$row['TYPE_ID']"><?php echo $row['NAME']; ?></option>
+                   <?php }
+                      }
+                    }
+                    ?>
+                 </select>
+               </div>
+             </div>
+              <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                 <label>Drip-feed</label>
+                 <select class="form-control" name="dripFeed">
+                  <option value="ACTIVE">Active</option>
+                  <option value="DEACTIVE">Deactive</option>
+                 </select>
                </div>
              </div>
              <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Minimum Amount</label>
+                 <input type="text" class="form-control " name="minAmount" placeholder="Enter Minimum Amount" required>
+               </div>
+             </div>
+             <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Maximum Amount</label>
+                 <input type="text" class="form-control " name="maxAmount" placeholder="Enter Maximum Amount" required>
+               </div>
+             </div>
+             <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Rate per 1000</label>
+                 <input type="text" class="form-control " name="rate" placeholder="Enter Rate" required>
+               </div>
+             </div>
+             <div class="col-md-12 col-sm-12">
                <div class="form-group">
                  <label>Status</label>
                  <select class="form-control" name="status">
@@ -173,7 +239,7 @@
 
  <!-- Add Category ends -->
 
-  <!-- Edit Category starts -->
+ <!-- Edit Category starts -->
 
  <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
    <div class="modal-dialog modal-lg" role="document">
@@ -188,7 +254,7 @@
          <input type="hidden" name="updateCateory">
          <div class="modal-body">
            <div class="row">
-            <input type="hidden" class="form-control" name="editcategoryId" placeholder="Enter Category Name" id="editcategoryId" required>
+             <input type="hidden" class="form-control" name="editcategoryId" placeholder="Enter Category Name" id="editcategoryId" required>
 
              <div class="col-md-8 col-sm-12">
                <div class="form-group">
@@ -229,20 +295,20 @@
 
  <script type="text/javascript">
    async function deleteCategory(categoryId) {
-    var result = confirm("Are you sure you want to delete?");
-    if (result) {
-      var response = await fetch("api/?deleteCategory&categoryId=" + categoryId);
-      response = await response.json();
-      window.location.reload();
-    }
-  }
-  async function fetchCategoryData(categoryId) {
-    var response = await fetch("api/?getCategoryData&categoryId=" + categoryId);
-    response = await response.json();
-    console.log(response);
-    document.getElementById('editname').value = response.NAME;
-    document.getElementById('editdescription').value = response.DESCRIPTION;
-    document.getElementById('editstatus').value = response.STATUS;
-    document.getElementById('editcategoryId').value = response.CATEGORY_ID;
-  }
+     var result = confirm("Are you sure you want to delete?");
+     if (result) {
+       var response = await fetch("api/?deleteCategory&categoryId=" + categoryId);
+       response = await response.json();
+       window.location.reload();
+     }
+   }
+   async function fetchCategoryData(categoryId) {
+     var response = await fetch("api/?getCategoryData&categoryId=" + categoryId);
+     response = await response.json();
+     console.log(response);
+     document.getElementById('editname').value = response.NAME;
+     document.getElementById('editdescription').value = response.DESCRIPTION;
+     document.getElementById('editstatus').value = response.STATUS;
+     document.getElementById('editcategoryId').value = response.CATEGORY_ID;
+   }
  </script>

@@ -139,6 +139,12 @@ if ($_SESSION['AdminLoggedIn']) {
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/service-type/" aria-expanded="false">
+                                <i class="fa fa-th-list" aria-hidden="true"></i>
+                                <span class="hide-menu">Services Type</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/services/" aria-expanded="false">
                                 <i class="fa fa-th-list" aria-hidden="true"></i>
                                 <span class="hide-menu">Services</span>
