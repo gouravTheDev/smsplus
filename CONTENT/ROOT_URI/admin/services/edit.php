@@ -5,6 +5,40 @@
  </script>
  <title>SocialMySocial+ Admin</title>
 
+ <?php
+  if (isset($_GET['serviceid']) && !is_null($_GET['serviceid'])) {
+    //To-DO
+    $serviceId = $_GET['serviceid'];
+    $sql = "SELECT SERVICE.*, CATEGORY.NAME AS categoryName, CATEGORY.CATEGORY_ID AS categoryId, SERVICE_TYPE.NAME AS typeName, SERVICE_TYPE.TYPE_ID AS typeId FROM SERVICE INNER JOIN CATEGORY ON SERVICE.CATEGORY_ID = CATEGORY.CATEGORY_ID INNER JOIN SERVICE_TYPE ON SERVICE.TYPE_ID = SERVICE_TYPE.TYPE_ID WHERE SERVICE.SERVICE_ID = '$serviceId' AND SERVICE.DELETED = 'FALSE'";
+    $result = mysqli_query($link, $sql);
+    if (mysqli_num_rows($result) > 0) {
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      $name = $row['NAME'];
+      $categoryId = $row['categoryId'];
+      $categoryName = $row['categoryName'];
+      $minAmount = $row['MIN_AMOUNT'];
+      $maxAmount = $row['MAX_AMOUNT'];
+      $typeId = $row['typeId'];
+      $typeName = $row['typeName'];
+      $rate = $row['RATE'];
+      $dripFeed = $row['DRIP_FEED'];
+      $status = $row['STATUS'];
+      $description = $row['DESCRIPTION'];
+
+      //Fetch Category List
+      $sqlC = "SELECT * FROM CATEGORY WHERE DELETED = 'FALSE'";
+      $resultC = mysqli_query($link, $sqlC);
+
+      //Fetch Service Type List
+      $sqlT = "SELECT * FROM SERVICE_TYPE WHERE DELETED = 'FALSE'";
+      $resultT = mysqli_query($link, $sqlT);
+    } else {
+      echo '<script>window.location.href="/admin/services/"</script>';
+    }
+  } else {
+    echo '<script>window.location.href="/admin/services/"</script>';
+  }
+  ?>
 
  <div class="page-breadcrumb bg-white">
    <div class="row align-items-center">
@@ -21,107 +55,152 @@
    </div>
  </div>
 
- <div class="container" style="height: 100%;">
-  <?php 
-    // Edit Category
-    if (isset($_POST['updateCateory'])) {
-      $description = $_POST['editdescription'];
-      $name = $_POST['editname'];
-      $status = $_POST['editstatus'];
-      $categoryId =  $_POST['editcategoryId'];
+ <div class="container pt-4" style="height: 100%;">
+   <?php
+    // Update Service
+    if (isset($_POST['updateService'])) {
 
-      $stmt = $link->prepare("UPDATE CATEGORY SET `NAME` = ?, `DESCRIPTION` = ?, `STATUS` = ? WHERE CATEGORY_ID = ?");
+      $serviceId = $_GET['serviceid'];
+      
+      $editname = $_POST['editname'];
+      $editcategoryId = $_POST['editcategoryId'];
+      $editminAmount = $_POST['editminAmount'];
+      $editmaxAmount = $_POST['editmaxAmount'];
+      $edittypeId = $_POST['edittypeId'];
+      $editrate = $_POST['editrate'];
+      $editdripFeed = $_POST['editdripFeed'];
+      $editstatus = $_POST['editstatus'];
+      $editdescription = $_POST['editdescription'];
 
-      $stmt->bind_param("ssss", $name, $description, $status, $categoryId);
+      $stmt = $link->prepare("UPDATE SERVICE SET `NAME` = ?, `CATEGORY_ID` = ?, `TYPE_ID` = ?, `MIN_AMOUNT` = ?, `MAX_AMOUNT` = ?, `RATE` = ?, `DRIP_FEED` = ?, `DESCRIPTION` = ?, `STATUS` = ? WHERE SERVICE_ID = ?");
+
+      $stmt->bind_param("ssssssssss", $editname, $editcategoryId, $edittypeId, $editminAmount, $editmaxAmount, $editrate, $editdripFeed, $editdescription, $editstatus, $serviceId);
 
       if ($stmt->execute()) {
-        echo '<div class="container mt-3"><div class="alert alert-success text-center">Category Updated Successfully</div></div>';
+        echo '<div class="container mt-3"><div class="alert alert-success text-center">Service Updated Successfully</div></div>';
+        echo '<script>location.reload();</script>';
       } else {
         echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
       }
     }
     ?>
-   <div class="row mt-3">
-     <div class="col-12">
-       <a href="add" class="btn btn-primary shadow" data-toggle="modal" data-target="#addServiceModal"><i class="fa fa-plus"></i> Add Service</a>
-     </div>
-   </div>
-   <!-- Category wise Cards -->
-   <?php
-    $sqlC = "SELECT * FROM CATEGORY WHERE DELETED = 'FALSE'";
-    $resultC = mysqli_query($link, $sqlC);
-    if ($result) {
-      if (mysqli_num_rows($resultC) > 0) {
-        while ($rowC = mysqli_fetch_array($resultC, MYSQLI_ASSOC)) { $catId = $rowC['CATEGORY_ID']; ?>
-         <div class="card shadow mt-4 mb-4">
-           <div class="card-header">
-             <h4 class="font-weight-bold"><?php echo $rowC['NAME']; ?></h4>
-           </div>
-           <div class="card-body">
-             <div class="table-responsive p-0 mt-4">
-               <table class="table table-hover text-nowrap serviceList">
-                 <thead>
-                   <tr style="text-align: center;">
-                     <th scope="col">No.</th>
-                     <th scope="col">Name</th>
-                     <th scope="col">Service Type</th>
-                     <th scope="col">Rate Per 1000</th>
-                     <th scope="col">Min/Max Order</th>
-                     <th scope="col">Drip Feed</th>
-                     <th scope="col">Status</th>
-                     <th scope="col">Action</th>
-                   </tr>
-                 </thead>
-                 <tbody id="ticketListBody">
+
+   <div class="card shadow">
+     <div class="card-body">
+       <form method="POST">
+         <input type="hidden" name="updateService" value="true">
+         <div class="modal-body">
+           <div class="row">
+             <div class="col-md-12 col-sm-12">
+               <div class="form-group">
+                 <label>Name</label>
+                 <input type="text" class="form-control" name="editname" placeholder="Enter Service Name" required value="<?php echo $name; ?>">
+               </div>
+             </div>
+             <div class="col-md-12 col-sm-12">
+               <div class="form-group">
+                 <label>Category Id</label>
+                 <select class="form-control" name="editcategoryId">
                    <?php
-                    $sql = "SELECT SERVICE.*, CATEGORY.NAME AS categoryName, SERVICE_TYPE.NAME AS typeName FROM SERVICE INNER JOIN CATEGORY ON SERVICE.CATEGORY_ID = CATEGORY.CATEGORY_ID INNER JOIN SERVICE_TYPE ON SERVICE.TYPE_ID = SERVICE_TYPE.TYPE_ID WHERE SERVICE.DELETED = 'FALSE' AND SERVICE.CATEGORY_ID = '$catId'";
-                    $result = mysqli_query($link, $sql);
-                    if ($result) {
-                      if (mysqli_num_rows($result) > 0) {
-                        $i = 1;
-                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                          echo  '<tr style="text-align: center;">
-                         <td>' . $i . '</td>
-                         <td>' . $row['NAME'] . '</td>
-                         <td>' . $row['typeName'] . '</td>
-                         <td>' . $row['RATE'] . '</td>
-                         <td>' . $row['MIN_AMOUNT']."/". $row['MAX_AMOUNT'] . '</td>
-                         <td>' . $row['DRIP_FEED'] . '</td>
-                         <td>' . $row['STATUS'] . '</td>
-                         <td>
-                          <div class="btn-group">
-                            <button onclick= "fetchData(`' . $row['SERVICE_ID'] . '`)" data-toggle="modal" data-target="#editCategoryModal" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
-                            <button onclick= "deleteService(`' . $row['SERVICE_ID'] . '`)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                          </div>
-                         </td>';
-                          $i++;
-                        }
-                      } else {
-                        echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
-                No Service Found!
-            </div>';
+                    if (mysqli_num_rows($resultC) > 0) {
+                      while ($rowC = mysqli_fetch_array($resultC, MYSQLI_ASSOC)) {
+                        if ($rowC['CATEGORY_ID'] == $categoryId) { ?>
+                         <option value="<?php echo $rowC['CATEGORY_ID']; ?>" selected><?php echo $rowC['NAME']; ?></option>
+                       <?php   } else {  ?>
+                         <option value="<?php echo $rowC['CATEGORY_ID']; ?>"><?php echo $rowC['NAME']; ?></option>
+                   <?php  }
                       }
                     }
                     ?>
-                 </tbody>
-                 <tfoot>
-                   <tr style="text-align: center;">
-                     <th scope="col">No.</th>
-                     <th scope="col">Name</th>
-                     <th scope="col">Service Type</th>
-                     <th scope="col">Rate Per 1000</th>
-                     <th scope="col">Min/Max Order</th>
-                     <th scope="col">Drip Feed</th>
-                     <th scope="col">Status</th>
-                     <th scope="col">Action</th>
-                   </tr>
-                 </tfoot>
-               </table>
+                 </select>
+               </div>
+             </div>
+             <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                 <label>Service Type</label>
+                 <select class="form-control" name="edittypeId">
+                   <?php
+                    if (mysqli_num_rows($resultT) > 0) {
+                      while ($rowT = mysqli_fetch_array($resultT, MYSQLI_ASSOC)) {
+
+                        if ($rowT['TYPE_ID'] == $typeId) { ?>
+                         <option value="<?php echo $rowT['TYPE_ID']; ?>" selected><?php echo $rowT['NAME']; ?></option>
+                       <?php   } else {  ?>
+                         <option value="<?php echo $rowT['TYPE_ID']; ?>"><?php echo $rowT['NAME']; ?></option>
+                   <?php  }
+                      }
+                    }
+                    ?>
+                 </select>
+               </div>
+             </div>
+             <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                 <label>Drip-feed</label>
+                 <select class="form-control" name="editdripFeed">
+                  <?php 
+                  if($dripFeed == 'ACTIVE'){
+                    echo '<option value="ACTIVE" selected>Active</option>
+                          <option value="DEACTIVE">Deactive</option>';
+                  }else{
+                    echo '<option value="ACTIVE">Active</option>
+                          <option value="DEACTIVE" selected>Deactive</option>';
+                  }
+                  ?>
+                   
+                 </select>
+               </div>
+             </div>
+             <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Minimum Amount</label>
+                 <input type="text" class="form-control" name="editminAmount" placeholder="Enter Minimum Amount" required value="<?php echo $minAmount; ?>">
+               </div>
+             </div>
+             <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Maximum Amount</label>
+                 <input type="text" class="form-control " name="editmaxAmount" placeholder="Enter Maximum Amount" required value="<?php echo $maxAmount; ?>">
+               </div>
+             </div>
+             <div class="col-md-4 col-sm-12">
+               <div class="form-group">
+                 <label>Rate per 1000</label>
+                 <input type="text" class="form-control " name="editrate" placeholder="Enter Rate" required value="<?php echo $rate; ?>">
+               </div>
+             </div>
+             <div class="col-md-12 col-sm-12">
+               <div class="form-group">
+                 <label>Status</label>
+                 <select class="form-control" name="editstatus">
+                  <?php 
+                    if($status == 'ACTIVE'){
+                    echo '<option value="ACTIVE" selected>Active</option>
+                          <option value="INACTIVE">Inactive</option>';
+                  }else{
+                    echo '<option value="ACTIVE">Active</option>
+                          <option value="INACTIVE" selected>Inactive</option>';
+                  }
+                  ?>
+                 </select>
+               </div>
+             </div>
+             <div class="col-12">
+               <label>Description</label>
+               <textarea name="editdescription" id="editor" rows="5" cols="5"><?php echo $description; ?></textarea>
              </div>
            </div>
          </div>
-   <?php }
-      }
-    }
-    ?>
+         <div class="modal-footer">
+           <a href="home" class="btn btn-warning">Back</a>
+           <button type="submit" class="btn btn-primary">Update changes</button>
+         </div>
+       </form>
+     </div>
+   </div>
+
  </div>
+
+ <script>
+   CKEDITOR.replace('editdescription');
+ </script>

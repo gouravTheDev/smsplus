@@ -48,24 +48,6 @@
         echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
       }
     }
-
-    // Edit Category
-    if (isset($_POST['updateCateory'])) {
-      $description = $_POST['editdescription'];
-      $name = $_POST['editname'];
-      $status = $_POST['editstatus'];
-      $categoryId =  $_POST['editcategoryId'];
-
-      $stmt = $link->prepare("UPDATE CATEGORY SET `NAME` = ?, `DESCRIPTION` = ?, `STATUS` = ? WHERE CATEGORY_ID = ?");
-
-      $stmt->bind_param("ssss", $name, $description, $status, $categoryId);
-
-      if ($stmt->execute()) {
-        echo '<div class="container mt-3"><div class="alert alert-success text-center">Category Updated Successfully</div></div>';
-      } else {
-        echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
-      }
-    }
     ?>
    <div class="row mt-3">
      <div class="col-12">
@@ -106,17 +88,28 @@
                       if (mysqli_num_rows($result) > 0) {
                         $i = 1;
                         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                          if ($row['STATUS'] == 'ACTIVE') {
+                            $serviceStatus = '<span class="badge badge-success" style="color: #fff;">Active</span>';
+                          } else {
+                            $serviceStatus = '<span class="badge badge-danger" style="color: #fff;">Inactive</span>';
+                          }
+
+                          if ($row['DRIP_FEED'] == 'ACTIVE') {
+                            $dripFeed = '<span class="badge badge-success" style="color: #fff;">Active</span>';
+                          } else {
+                            $dripFeed = '<span class="badge badge-danger" style="color: #fff;">Deactive</span>';
+                          }
                           echo  '<tr style="text-align: center;">
                          <td>' . $i . '</td>
                          <td>' . $row['NAME'] . '</td>
                          <td>' . $row['typeName'] . '</td>
                          <td>' . $row['RATE'] . '</td>
                          <td>' . $row['MIN_AMOUNT']."/". $row['MAX_AMOUNT'] . '</td>
-                         <td>' . $row['DRIP_FEED'] . '</td>
-                         <td>' . $row['STATUS'] . '</td>
+                         <td>' . $dripFeed . '</td>
+                         <td>' . $serviceStatus . '</td>
                          <td>
                           <div class="btn-group">
-                            <button onclick= "fetchData(`' . $row['SERVICE_ID'] . '`)" data-toggle="modal" data-target="#editCategoryModal" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                            <a href="edit?serviceid='.$row['SERVICE_ID'].'" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             <button onclick= "deleteService(`' . $row['SERVICE_ID'] . '`)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                           </div>
                          </td>';
@@ -152,7 +145,7 @@
     ?>
  </div>
 
- <!-- Add Category starts -->
+ <!-- Add Service starts -->
 
 
  <div class="modal fade" id="addServiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -263,56 +256,8 @@
    </div>
  </div>
 
- <!-- Add Category ends -->
+ <!-- Add Service ends -->
 
- <!-- Edit Category starts -->
-
- <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-   <div class="modal-dialog modal-lg" role="document">
-     <div class="modal-content" style="background: #F7F0FA;">
-       <div class="modal-header">
-         <h5 class="modal-title" id="exampleModalLongTitle">Update Category</h5>
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <span aria-hidden="true">&times;</span>
-         </button>
-       </div>
-       <form method="POST">
-         <input type="hidden" name="updateCateory">
-         <div class="modal-body">
-           <div class="row">
-             <input type="hidden" class="form-control" name="editcategoryId" placeholder="Enter Category Name" id="editcategoryId" required>
-
-             <div class="col-md-8 col-sm-12">
-               <div class="form-group">
-                 <label>Name</label>
-                 <input type="text" class="form-control" name="editname" placeholder="Enter Category Name" id="editname" required>
-               </div>
-             </div>
-             <div class="col-md-4 col-sm-12">
-               <div class="form-group">
-                 <label>Status</label>
-                 <select class="form-control" name="editstatus" id="editstatus">
-                   <option value="ACTIVE">Active</option>
-                   <option value="INACTIVE">Inactive</option>
-                 </select>
-               </div>
-             </div>
-             <div class="col-12">
-               <label>Description</label>
-               <textarea name="editdescription" id="editdescription" rows="5" cols="5">Write Description Here</textarea>
-             </div>
-           </div>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           <button type="submit" class="btn btn-primary">Update changes</button>
-         </div>
-       </form>
-     </div>
-   </div>
- </div>
-
- <!-- Edit Category ends -->
 
  <script>
    CKEDITOR.replace('description');
