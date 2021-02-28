@@ -1,6 +1,6 @@
 <?php
 $link = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB);
-$link->set_charset("utf8");
+$link->set_charset("utf8mb4");
 
 if (mysqli_connect_error()) {
     die("ERROR: UNABLE TO CONNECT: " . mysqli_connect_error());

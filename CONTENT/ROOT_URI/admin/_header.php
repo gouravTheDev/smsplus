@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="/assets/dashboard/css/style.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/JS/ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" href="/CSS/table.min.css">
     <style type="text/css">
         .btnSmm{
