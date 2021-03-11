@@ -175,7 +175,7 @@ if ($_SESSION['AdminLoggedIn']) {
                             </a>
                         </li>
                         <li class="text-center p-20 upgrade-btn">
-                            <a href="logout" class="btn btn-block btn-danger text-white shadow">
+                            <a href="/admin/logout" class="btn btn-block btn-danger text-white shadow">
                                 Logout</a>
                         </li>
                     </ul>
