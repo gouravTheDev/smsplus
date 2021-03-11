@@ -37,6 +37,20 @@
           "order": [[ 0, "desc" ]]
         });
       });
+      $(document).ready(() => {
+        $('.serviceList').DataTable( {
+          "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+          "order": [[ 0, "asc" ]],
+          "columns": [
+                null,
+                { "width": "50%" },
+                null,
+                null,
+                null,
+                null
+            ]
+        });
+      });
     </script>
 
     <!--This page JavaScript -->

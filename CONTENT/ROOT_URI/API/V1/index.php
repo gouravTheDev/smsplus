@@ -49,6 +49,20 @@ if (isset($_GET['checkUserNameEdit'])){
 	}
 }
 
+// Check User Name edit
+if (isset($_GET['getServiceDetails'])) {
+ $serviceId = $_GET['serviceId'];
+ $sql = "SELECT * FROM SERVICE WHERE `SERVICE_ID` = '$serviceId' AND DELETED = 'FALSE'";
+ $result = mysqli_query($link,$sql);
+ if ($result) {
+    if(mysqli_num_rows($result)>0){
+      $data = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    }else{
+      $data = null;
+    }
+  }
+}
+
 // Send back response
 $myObj = new stdClass();
 $myObj->data = $data;

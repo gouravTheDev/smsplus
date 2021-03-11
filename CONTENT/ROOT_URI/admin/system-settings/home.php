@@ -22,6 +22,7 @@
  </div>
 
  <div class="container" style="height: 100%; padding-bottom: 100px;">
+  <?php include 'nav.php'; ?>
    <div class="card shadow mt-4 mb-4">
     <div class="card-body">
       <h3 class="text-center">System Settings</h3>
