@@ -112,23 +112,3 @@ if (isset($_POST['submitWebsiteDetails'])) {
     </div>
    </div>
  </div>
-
- <script type="text/javascript">
-  //  async function deleteCategory(categoryId) {
-  //   var result = confirm("Are you sure you want to delete?");
-  //   if (result) {
-  //     var response = await fetch("api/?deleteCategory&categoryId=" + categoryId);
-  //     response = await response.json();
-  //     window.location.reload();
-  //   }
-  // }
-  // async function fetchCategoryData(categoryId) {
-  //   var response = await fetch("api/?getCategoryData&categoryId=" + categoryId);
-  //   response = await response.json();
-  //   console.log(response);
-  //   document.getElementById('editname').value = response.NAME;
-  //   document.getElementById('editdescription').value = response.DESCRIPTION;
-  //   document.getElementById('editstatus').value = response.STATUS;
-  //   document.getElementById('editcategoryId').value = response.CATEGORY_ID;
-  // }
- </script>
