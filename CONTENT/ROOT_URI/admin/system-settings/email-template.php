@@ -72,11 +72,11 @@
    <?php include 'nav.php'; ?>
    <div class="card shadow mt-4 mb-4 col-md-8 col-sm-12 mx-auto">
      <div class="card-body">
-       <h3 class="text-center">Website CMS Management</h3>
+       <h3 class="text-center">Website Email Template Management</h3>
        <!-- Privacy Policy -->
        <?php
        // Fetch Data
-        $sqlPrivacy = "SELECT * FROM CMS WHERE SLUG = 'privacy-policy'";
+        $sqlPrivacy = "SELECT * FROM EMAIL_TEMPLATE WHERE SLUG = 'registration'";
         $resultPrivacyPolicy = mysqli_query($link, $sqlPrivacy);
         if ($resultPrivacyPolicy) {
           if (mysqli_num_rows($resultPrivacyPolicy) > 0) {
