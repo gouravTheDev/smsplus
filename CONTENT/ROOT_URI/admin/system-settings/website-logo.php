@@ -30,6 +30,16 @@ if (isset($_POST['submitWebsiteDetails'])) {
 
   //Main Logo Upload
   if ($_FILES['mainLogo']['name'] && $_FILES['mainLogo']['name'] != '') {
+
+     $sqlF2 = "SELECT * FROM WEBSITE_LOGO WHERE ID = '1'";
+     $resultF2 = mysqli_query($link,$sqlF2);
+     if ($resultF2) {
+        if(mysqli_num_rows($resultF2)>0){
+          $row2 = mysqli_fetch_array($resultF2,MYSQLI_ASSOC);
+          $logoF = $row2['MAIN_LOGO'];
+          $faviconF = $row2['FAVICON'];
+        }
+      }
     $mainLogoPath = $_FILES['mainLogo']['tmp_name'];
     $mainLogoName = $_FILES['mainLogo']['name'];
     $mainLogoName = basename($mainLogoName);
@@ -40,11 +50,21 @@ if (isset($_POST['submitWebsiteDetails'])) {
 
     if ($mainLogoPath != ""){
       //Setup our new file path
-      $target = "$basePath.'/LOGOS/".$mainLogoName;
+      $target = $basePath."/LOGOS/".$mainLogoName;
 
       //Upload the file into the temp dir
       if(move_uploaded_file($_FILES['mainLogo']['tmp_name'], $target)) {
-        array_push($imgNames,$mainLogoName);
+        unlink($basePath."/LOGOS/".$logoF);
+        $sql2 = "UPDATE `WEBSITE_LOGO` SET `MAIN_LOGO` = '$mainLogoName' WHERE `ID` = '1'";
+        $result2 = mysqli_query($link,$sql2);
+
+        if ($result2) {
+           echo '<div class="container mt-3"><div class="alert alert-success text-center">Website Logo has been Updated</div></div>';
+        }else{
+          echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
+        }
+      }else{
+        echo 'Cant upload';
       }
     }
   }
@@ -62,28 +82,32 @@ if (isset($_POST['submitWebsiteDetails'])) {
 
     if ($faviconPath != ""){
       //Setup our new file path
-      $target = "$basePath.'/LOGOS/".$faviconName;
+      $target =  $basePath."/LOGOS/".$faviconName;
 
       //Upload the file into the temp dir
       if(move_uploaded_file($_FILES['favicon']['tmp_name'], $target)) {
-        // $sqlUpload = "SELECT "
+        unlink($basePath."/LOGOS/".$faviconF);
+        $sql = "UPDATE WEBSITE_LOGO SET FAVICON = '$faviconName' WHERE ID = '1'";
+        $result = mysqli_query($link,$sql);
+
+        if ($result) {
+           echo '<div class="container mt-3"><div class="alert alert-success text-center">Website Favicon has been Updated</div></div>';
+        }else{
+          echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
+        }
       }
     } 
   }
-
-  // if ($stmt->execute()) {
-  //   echo '<div class="container mt-3"><div class="alert alert-success text-center">Website Details Updated Successfully</div></div>';
-  // } else {
-  //   echo '<div class="container mt-3"><div class="alert alert-danger text-center">An error occured! Please try again or contact developer!</div></div>';
-  // }
 }
 
 // Fetch Data
- $sql = "SELECT * FROM WEBSITE_DETAILS WHERE ID = '1'";
- $result = mysqli_query($link,$sql);
- if ($result) {
-    if(mysqli_num_rows($result)>0){
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+ $sqlF = "SELECT * FROM WEBSITE_LOGO WHERE ID = '1'";
+ $resultF = mysqli_query($link,$sqlF);
+ if ($resultF) {
+    if(mysqli_num_rows($resultF)>0){
+      $row = mysqli_fetch_array($resultF,MYSQLI_ASSOC);
+      $logo = $row['MAIN_LOGO'];
+      $favicon = $row['FAVICON'];
     }
   }
 
@@ -94,23 +118,31 @@ if (isset($_POST['submitWebsiteDetails'])) {
    <div class="card shadow mt-4 mb-4 col-md-8 col-sm-12 mx-auto">
     <div class="card-body">
       <h3 class="text-center">Website Details Management</h3>
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
         <div class="row form-group">
           <div class="col-md-6">
             <label>Website Main Logo</label>
-            <input type="file" name="mainLogo" class="form-control" >
+            <input type="file" name="mainLogo" class="form-control">
           </div>
-
+          <div class="col-md-6 text-center">
+            <?php if ($logo && $logo!='') { ?>
+              <img style="height: 100px; width: 160px; background: #06319C; padding: 10px;" src="/LOGOS/<?php echo $logo; ?>">
+            <?php } ?>
+          </div>
         </div>
         <div class="row form-group">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <label>Website Favicon</label>
-            <textarea name="meta" placeholder="Website Meta Description"  class="form-control" rows="3" cols="3"><?php echo $row['FAVICON']; ?></textarea>
+            <input type="file" name="favicon" class="form-control">
+          </div>
+          <div class="col-md-6 text-center">
+            <?php if ($favicon && $favicon!='') { ?>
+              <img style="height: 100px; width: 160px; background: #06319C; padding: 10px;" src="/LOGOS/<?php echo $favicon; ?>">
+            <?php } ?>
           </div>
         </div>
-          
         <div class="row form-group">
-          <div class="col-md-12 text-right">
+          <div class="col-md-12 text-center mt-4">
             <input type="submit" name="submitWebsiteDetails" class="btn btn-success" value="Update Changes">
           </div>
         </div>
