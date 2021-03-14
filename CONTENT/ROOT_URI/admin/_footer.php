@@ -34,13 +34,13 @@
 
     <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
 
-
     <script src="/assets/emoji/lib/js/config.js"></script>
+    <script src="/JS/export.js"></script>
     <script src="/assets/emoji/lib/js/util.js"></script>
     <script src="/assets/emoji/lib/js/jquery.emojiarea.js"></script>
     <script src="/assets/emoji/lib/js/emoji-picker.js"></script>
 
-     <script>
+    <script>
       $(async function() {
         // Initializes and creates emoji set from sprite sheet
         window.emojiPicker = new EmojiPicker({
@@ -88,5 +88,4 @@
     <!--This page JavaScript -->
     <!--chartis chart-->
 </body>
-
 </html>

@@ -82,18 +82,131 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-body" style="padding-bottom: 30%;">
-            <h4 class="text-center">More Options are coming!</h4>
-            <!-- <div class="row">
-        			<div class="col-md-8 col-sm-12" style="height: 350px">
-        				<canvas id="myChart" style="height: 100%;"></canvas>
-        				
-        			</div>
-        			<div class="col-md-4 col-sm-12" style="height: 350px">
-        				<canvas id="myChart2" style="height: 100%;"></canvas>
-        				
-        			</div>
-        		</div> -->
+        <div class="card-body" style="padding-bottom: 5%;">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="font-weight-bold">Latest Orders</h3>
+                    <div class="alert alert-warning">No Orders</div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="font-weight-bold">Latest Tickets</h3>
+                    <div class="table-responsive p-0 mt-4">
+                        <table class="table table-hover text-nowrap" id="ticketDashboard">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Serial</th>
+                                    <th scope="col">Ticket Id</th>
+                                    <th scope="col">User Id</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Request</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ticketListBody">
+
+                                <?php
+                                $sql = "SELECT * FROM TICKETS WHERE DELETED = 'FALSE' ORDER BY ID DESC LIMIT 5";
+                                $result = mysqli_query($link, $sql);
+                                if ($result) {
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $i = 1;
+                                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                                            $ticketStatus = '<span class="badge badge-primary" style="color: #fff;">' . $row['STATUS'] . '</span>';
+                                            echo  '<tr>
+                         <td>' . $i . '</td>
+                         <td>' . $row['TICKET_ID'] . '</td>
+                         <td>' . $row['USER_ID'] . '</td>
+                         <td>' . $row['SUBJECT'] . '</td>
+                         <td>' . $row['REQUEST'] . '</td>
+                         ';
+                                            $i++;
+                                        }
+                                    } else {
+                                        echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
+                No ticket is raised till now!
+            </div>';
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="col">Serial</th>
+                                    <th scope="col">Ticket Id</th>
+                                    <th scope="col">User Id</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Request</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="font-weight-bold">Latest Users</h3>
+                    <div class="table-responsive p-0 mt-4">
+                <table class="table table-hover text-nowrap" id="ticketList2">
+                  <thead>
+                    <tr>
+                      <th scope="col">Serial</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ticketListBody">
+                  
+                     <?php
+                      $sql = "SELECT * FROM USERS WHERE DELETED = 'FALSE' ORDER BY ID DESC LIMIT 5";
+                      $result = mysqli_query($link, $sql);
+                      if ($result) {
+                        if (mysqli_num_rows($result) > 0) {
+                          $i = 1;
+                          while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
+                        echo  '<tr>
+                         <td>' . $i . '</td>
+                         <td>' . $row['FIRST_NAME'] . '</td>
+                         <td>' . $row['LAST_NAME'] . '</td>
+                         <td>' . $row['EMAIL'] . '</td>
+                         ';
+                         $i++;
+                          }
+                        } else {
+                          echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
+                No users till now!
+            </div>';
+                        }
+                      }
+                      ?>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="col">Serial</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </tfoot>
+                </table>
+            </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="font-weight-bold">Latest Transactions</h3>
+                    <div class="alert alert-warning">No Transactions</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<!-- <div class="row">
+    <div class="col-md-8 col-sm-12" style="height: 350px">
+        <canvas id="myChart" style="height: 100%;"></canvas>
+        
+    </div>
+    <div class="col-md-4 col-sm-12" style="height: 350px">
+        <canvas id="myChart2" style="height: 100%;"></canvas>
+        
+    </div>
+</div> -->

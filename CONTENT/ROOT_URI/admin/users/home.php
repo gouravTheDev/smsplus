@@ -11,7 +11,7 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ml-auto">
-                        <li><a href="#">User List</a></li>
+                      <li><a href="#">User List</a></li>
                     </ol>
                 </div>
             </div>
@@ -19,6 +19,11 @@
     </div>
 
 <div class="container" style="height: 100%;">
+  <div class="row">
+    <div class="col-md-12 mt-3 text-right">
+      <button class="btn btn-primary shadow" onclick="exportTableToCSV('user-details.csv')">Export Data as CSV</button>
+    </div>
+  </div>
   <div class="card shadow mt-4">
         <div class="card-body">
             <div class="table-responsive p-0 mt-4">
