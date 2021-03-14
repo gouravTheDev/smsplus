@@ -32,10 +32,11 @@ if (isset($_POST['submitWebsiteDetails'])) {
   $orders = $_POST['orders'];
   $staffs = $_POST['staffs'];
   $email = $_POST['email'];
+  $googleAnalytics = $_POST['googleAnalytics'];
 
-  $stmt = $link->prepare("UPDATE `WEBSITE_DETAILS` SET `TITLE` = ?, `META` = ?, `KEYWORDS` = ?, `HAPPY_CLIENTS` = ?, `COFFE_CUPS` = ?, `ORDERS` = ?, `STAFFS` = ?, `EMAIL` = ? WHERE ID = '1'");
+  $stmt = $link->prepare("UPDATE `WEBSITE_DETAILS` SET `TITLE` = ?, `META` = ?, `KEYWORDS` = ?, `HAPPY_CLIENTS` = ?, `COFFE_CUPS` = ?, `ORDERS` = ?, `STAFFS` = ?, `EMAIL` = ?, `GOOGLE_ANALYTICS` = ? WHERE ID = '1'");
 
-  $stmt->bind_param("ssssssss", $title, $meta, $keywords, $happyClients, $coffeCups, $orders, $staffs, $email);
+  $stmt->bind_param("sssssssss", $title, $meta, $keywords, $happyClients, $coffeCups, $orders, $staffs, $email, $googleAnalytics);
 
   if ($stmt->execute()) {
     echo '<div class="container mt-3"><div class="alert alert-success text-center">Website Details Updated Successfully</div></div>';
@@ -101,6 +102,12 @@ if (isset($_POST['submitWebsiteDetails'])) {
           <div class="col-md-12">
             <label>Email</label>
             <input type="email" name="email" placeholder="Website Email" required class="form-control" value="<?php echo $row['EMAIL']; ?>">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-12">
+            <label>Google Analytics Code</label>
+            <textarea name="googleAnalytics" placeholder="Google Analytics Code" class="form-control" cols="3" rows="4"><?php echo $row['GOOGLE_ANALYTICS']; ?></textarea>
           </div>
         </div>
         <div class="row form-group">
