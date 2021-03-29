@@ -1,0 +1,78 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Mar 29, 2021 at 08:07 PM
+-- Server version: 10.2.25-MariaDB-10.2.25+maria~xenial
+-- PHP Version: 7.2.19-1+ubuntu16.04.1+deb.sury.org+1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `admin_smm`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PAYMENTS`
+--
+
+CREATE TABLE `PAYMENTS` (
+  `ID` int(15) NOT NULL,
+  `ORDER_ID` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PAYMENT_ID` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `USER_ID` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PAYMENT_TYPE` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CURRENCY` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `AMOUNT` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DATE` date DEFAULT NULL,
+  `STATUS` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `PAYMENTS`
+--
+
+INSERT INTO `PAYMENTS` (`ID`, `ORDER_ID`, `PAYMENT_ID`, `USER_ID`, `PAYMENT_TYPE`, `CURRENCY`, `AMOUNT`, `DATE`, `STATUS`) VALUES
+(1, '5K4428354A379422M', '69481798WC766935E', '3rL9APK9', 'Paypal', 'USD', '10.00', '2021-03-29', 'COMPLETED'),
+(2, '4X603411JG3847108', '18L6066050174674S', '3rL9APK9', 'Paypal', 'USD', '20.00', '2021-03-29', 'COMPLETED'),
+(3, '0S459861PG906452Y', '4AE69537P4845801Y', '3rL9APK9', 'Paypal', 'USD', '12.00', '2021-03-29', 'COMPLETED'),
+(4, '9YA910437Y6093248', '06T308041F6049309', '3rL9APK9', 'Paypal', 'USD', '10.00', '2021-03-29', 'COMPLETED'),
+(5, '2KV89264XM331092R', '2CM55445DM6021946', '3rL9APK9', 'Paypal', 'USD', '12.00', '2021-03-29', 'COMPLETED'),
+(6, 'tok_1IaR7tHj7GRvLBRUtyflrPcJ', 'ch_1IaR7tHj7GRvLBRU8TXLoQZs', '3rL9APK9', 'Stripe', 'usd', '120', '2021-03-29', 'COMPLETED');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `PAYMENTS`
+--
+ALTER TABLE `PAYMENTS`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `PAYMENTS`
+--
+ALTER TABLE `PAYMENTS`
+  MODIFY `ID` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
