@@ -51,7 +51,7 @@ class CaptureOrder
         if (!$wallet || $wallet == '') {
           $wallet = $amountValue;
         }else{
-          $wallet = (int) $wallet;
+          $wallet = (double) $wallet;
           $wallet = $wallet+$amountValue;
         }
 

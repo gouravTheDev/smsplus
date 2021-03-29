@@ -46,6 +46,7 @@ if (!$_SESSION['LoggedIn']) {
             $whatsapp = $row["WHATSAPP"];
             $address = $row["ADDRESS"];
             $profilePic = $row["PROFILE_PIC"];
+            $wallet = $row["WALLET_MONEY"];
         }
     }
 
@@ -143,6 +144,9 @@ if (!$_SESSION['LoggedIn']) {
 
     <div class="container-fluid pt-4">
         <div class="row">
+            <div class="col-12 text-right">
+                <img src="/assets/images/wallet.svg" style="height: 30px; width: 30px;" class="mr-2"><span class="font-weight-bold" style="font-size: 1.3em;">$<?php echo $wallet; ?></span>
+            </div>
             <div class="col-12 text-center mb-4">
                 <?php if ($profilePic && $profilePic != '') : ?>
                     <img src="CONTENT/UPLOADS/PROFILE_PIC/<?php echo $userId ?>/<?php echo $profilePic; ?>" alt="user-img" width="100" height="100" class="mb-2" style="border-radius: 50%; cursor: pointer; border: 1px solid #D9CEDE;" title="Update Profile Picture" onclick="triggerFile();">
