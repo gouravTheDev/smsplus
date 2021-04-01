@@ -1,7 +1,6 @@
  <!-- footer -->
 <!-- ============================================================== -->
-<footer class="footer text-center"> 2020-2021 © SMS+ Dashboard <a
-        href="https://codewithbogo.in/">Code With Bogo</a>
+<footer class="footer text-center"> 2020-2021 © SMS+ Dashboard
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->

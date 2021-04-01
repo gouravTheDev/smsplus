@@ -40,10 +40,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span><a href="https://codewithbogo.in">Code With Bogo</a></span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed & Developed by <a href="https://codewithbogo.in">Gourav Chatterjee</a>
+        &copy; Copyright <strong><span>SMSE +</span></strong> <br>All Rights Reserved
       </div>
     </div>
   </footer><!-- End Footer -->
