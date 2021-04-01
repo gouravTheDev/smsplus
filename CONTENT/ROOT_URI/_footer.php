@@ -40,7 +40,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>SMSE +</span></strong> <br>All Rights Reserved
+        &copy; Copyright <strong><span>SMS+</span></strong> <br>All Rights Reserved
       </div>
     </div>
   </footer><!-- End Footer -->
