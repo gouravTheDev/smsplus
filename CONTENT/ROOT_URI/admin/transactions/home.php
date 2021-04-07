@@ -43,7 +43,7 @@
                       USERS.LAST_NAME AS LAST_NAME 
                       FROM PAYMENTS 
                       INNER JOIN USERS
-                      ON PAYMENTS.USER_ID = USERS.USER_ID";
+                      ON PAYMENTS.USER_ID = USERS.USER_ID ORDER BY PAYMENTS.ID DESC";
               $result = mysqli_query($link, $sql);
               if ($result) {
                 if (mysqli_num_rows($result) > 0) {

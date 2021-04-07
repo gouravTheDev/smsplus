@@ -3,6 +3,30 @@
 <meta content="" name="keywords">
 
 <?php include '_menu.php'; ?>
+
+<?php 
+$sql1 = "SELECT * FROM USERS WHERE DELETED = 'FALSE'";
+$result1 = mysqli_query($link, $sql1);
+$users = mysqli_num_rows($result1);
+
+$sql2 = "SELECT * FROM PAYMENTS";
+$result2 = mysqli_query($link, $sql2);
+$totalEarned = 0;
+if (mysqli_num_rows($result2) > 0) {
+    while ($rowPa = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
+        $amount = (double) $rowPa['AMOUNT'];
+        $totalEarned = $totalEarned + $amount;
+    }
+}
+
+$sql3 = "SELECT * FROM OFFCOUNTER_SALES WHERE DELETED = 'FALSE'";
+$result3 = mysqli_query($link, $sql3);
+$offCounter = mysqli_num_rows($result3);
+
+$sql4 = "SELECT * FROM TICKETS WHERE DELETED = 'FALSE'";
+$result4 = mysqli_query($link, $sql4);
+$tickets = mysqli_num_rows($result4);
+?>
 <div class="page-breadcrumb bg-white">
     <div class="row align-items-center">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pt-2">
@@ -25,10 +49,10 @@
                 <div class="card-body" style="color: #ffffff">
                     <div class="row">
                         <div class="col-3 d-flex p-2">
-                            <h2><i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 2em;"></i></h2>
+                            <h2><i class="fa fa-user" aria-hidden="true" style="font-size: 2em;"></i></h2>
                         </div>
                         <div class="col-9 text-right">
-                            <h2>80</h2>
+                            <h2><?php echo $users; ?></h2>
                             <h4>Total Users</h4>
                         </div>
                     </div>
@@ -40,10 +64,10 @@
                 <div class="card-body" style="color: #ffffff">
                     <div class="row">
                         <div class="col-3 d-flex p-2">
-                            <h2><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 2em;"></i></h2>
+                            <h2><i class="fa fa-credit-card" aria-hidden="true" style="font-size: 2em;"></i></h2>
                         </div>
                         <div class="col-9 text-right">
-                            <h2>$150.000</h2>
+                            <h2><?php echo "$".$totalEarned; ?></h2>
                             <h5>Total Amount Recieved</h5>
                         </div>
                     </div>
@@ -58,7 +82,7 @@
                             <h2><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 2em;"></i></h2>
                         </div>
                         <div class="col-9 text-right">
-                            <h2>4</h2>
+                            <h2>0</h2>
                             <h4>Total Orders</h4>
                         </div>
                     </div>
@@ -70,10 +94,10 @@
                 <div class="card-body" style="color: #ffffff">
                     <div class="row">
                         <div class="col-3 d-flex p-2">
-                            <h2><i class="fa fa-cart-plus" aria-hidden="true" style="font-size: 2em;"></i></h2>
+                            <h2><i class="fa fa-ticket-alt" aria-hidden="true" style="font-size: 2em;"></i></h2>
                         </div>
                         <div class="col-9 text-right">
-                            <h2>21</h2>
+                            <h2><?php echo $tickets; ?></h2>
                             <h4>Total Tickets</h4>
                         </div>
                     </div>
@@ -95,7 +119,7 @@
                         <table class="table table-hover text-nowrap" id="ticketDashboard">
                             <thead>
                                 <tr>
-                                    <th scope="col">Serial</th>
+                                    <th scope="col">No.</th>
                                     <th scope="col">Ticket Id</th>
                                     <th scope="col">User Id</th>
                                     <th scope="col">Subject</th>
@@ -131,7 +155,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th scope="col">Serial</th>
+                                    <th scope="col">No.</th>
                                     <th scope="col">Ticket Id</th>
                                     <th scope="col">User Id</th>
                                     <th scope="col">Subject</th>
@@ -145,55 +169,107 @@
                 <div class="col-md-6 col-sm-12">
                     <h3 class="font-weight-bold">Latest Users</h3>
                     <div class="table-responsive p-0 mt-4">
-                <table class="table table-hover text-nowrap" id="ticketList2">
-                  <thead>
-                    <tr>
-                      <th scope="col">Serial</th>
-                      <th scope="col">First Name</th>
-                      <th scope="col">Last Name</th>
-                      <th scope="col">Email</th>
-                    </tr>
-                  </thead>
-                  <tbody id="ticketListBody">
-                  
-                     <?php
-                      $sql = "SELECT * FROM USERS WHERE DELETED = 'FALSE' ORDER BY ID DESC LIMIT 5";
-                      $result = mysqli_query($link, $sql);
-                      if ($result) {
-                        if (mysqli_num_rows($result) > 0) {
-                          $i = 1;
-                          while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                        <table class="table table-hover text-nowrap" id="ticketList2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ticketListBody">
 
-                        echo  '<tr>
+                                <?php
+                                $sql = "SELECT * FROM USERS WHERE DELETED = 'FALSE' ORDER BY ID DESC LIMIT 5";
+                                $result = mysqli_query($link, $sql);
+                                if ($result) {
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $i = 1;
+                                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
+                                            echo  '<tr>
                          <td>' . $i . '</td>
                          <td>' . $row['FIRST_NAME'] . '</td>
                          <td>' . $row['LAST_NAME'] . '</td>
                          <td>' . $row['EMAIL'] . '</td>
                          ';
-                         $i++;
-                          }
-                        } else {
-                          echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
+                                            $i++;
+                                        }
+                                    } else {
+                                        echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
                 No users till now!
             </div>';
-                        }
-                      }
-                      ?>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th scope="col">Serial</th>
-                      <th scope="col">First Name</th>
-                      <th scope="col">Last Name</th>
-                      <th scope="col">Email</th>
-                    </tr>
-                  </tfoot>
-                </table>
-            </div>
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <h3 class="font-weight-bold">Latest Transactions</h3>
-                    <div class="alert alert-warning">No Transactions</div>
+                    <div class="table-responsive p-0 mt-4">
+                        <table class="table table-hover text-nowrap" id="ticketDashboard">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ticketListBody">
+
+                                <?php
+                                $sql = "SELECT PAYMENTS.*,
+                                      USERS.FIRST_NAME AS FIRST_NAME,
+                                      USERS.LAST_NAME AS LAST_NAME 
+                                      FROM PAYMENTS 
+                                      INNER JOIN USERS
+                                      ON PAYMENTS.USER_ID = USERS.USER_ID ORDER BY PAYMENTS.ID DESC LIMIT 5";
+                                $result = mysqli_query($link, $sql);
+                                if ($result) {
+                                    if (mysqli_num_rows($result) > 0) {
+                                        $i = 1;
+                                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                                            echo  '<tr>
+                                                     <td>' . $i . '</td>
+                                                     <td>' . $row['FIRST_NAME']. " ". $row['LAST_NAME'] . '</td>
+                                                     <td>' . $row['AMOUNT']. " ". $row['CURRENCY'] . '</td>
+                                                     <td>' . $row['PAYMENT_TYPE'] . '</td>
+                                                     <td>' . $row['DATE'] . '</td>
+                                                     ';
+                                            $i++;
+                                        }
+                                    } else {
+                                        echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
+                No ticket is raised till now!
+            </div>';
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

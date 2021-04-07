@@ -40,7 +40,7 @@ $link->set_charset("utf8");
   		$orderId = $tokenId;
       $status = "COMPLETED";
       $paymentId = $stripePayment->id;
-      $currency = $stripePayment->currency;
+      $currency = strtoupper($stripePayment->currency);
       $amountValue = $stripePayment->amount;
       $payerName = $stripePayment->billing_details->name;
 
