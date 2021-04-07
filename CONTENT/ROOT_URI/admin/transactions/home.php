@@ -29,36 +29,42 @@
            <thead>
              <tr>
                <th scope="col">No.</th>
-               <th scope="col">Name</th>
-               <th scope="col">Status</th>
-               <th scope="col">Action</th>
+               <th scope="col">Paymt. Id</th>
+               <th scope="col">User (User Id)</th>
+               <th scope="col">Amount</th>
+               <th scope="col">Type</th>
+               <th scope="col">Date</th>
              </tr>
            </thead>
            <tbody id="ticketListBody">
              <?php
-              $sql = "SELECT * FROM Transaction WHERE DELETED = 'FALSE'";
+              $sql = "SELECT PAYMENTS.*,
+                      USERS.FIRST_NAME AS FIRST_NAME,
+                      USERS.LAST_NAME AS LAST_NAME 
+                      FROM PAYMENTS 
+                      INNER JOIN USERS
+                      ON PAYMENTS.USER_ID = USERS.USER_ID";
               $result = mysqli_query($link, $sql);
               if ($result) {
                 if (mysqli_num_rows($result) > 0) {
                   $i = 1;
                   while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    if ($row['STATUS'] == 'ACTIVE') {
-                      $categoryStatus = '<span class="badge badge-success" style="color: #fff;">Active</span>';
-                    } else {
-                      $categoryStatus = '<span class="badge badge-danger" style="color: #fff;">Inactive</span>';
-                    }
+                    $date = $row['DATE'];
+                    $paymentId = $row['PAYMENT_ID'];
+                    $userFullName = $row['FIRST_NAME']. " ". $row['LAST_NAME']." (".$row['USER_ID'].")";
+                    $amount = $row['AMOUNT']." ".$row['CURRENCY'];
+                    $paymentType = $row['PAYMENT_TYPE']; ?>
 
-                    echo  '<tr>
-                         <td>' . $i . '</td>
-                         <td>' . $row['NAME'] . '</td>
-                         <td>' . $categoryStatus . '</td>
-                         <td>
-                          <div class="btn-group">
-                            <button onclick= "fetchCategoryData(`'.$row['CATEGORY_ID'].'`)" data-toggle="modal" data-target="#editCategoryModal" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
-                            <button onclick= "deleteCategory(`'.$row['CATEGORY_ID'].'`)" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                          </div>
-                         </td>';
-                    $i++;
+                     <tr>
+                      <td><?php echo $i; ?></td>
+                      <td><?php echo $paymentId; ?></td>
+                      <td><?php echo $userFullName; ?></td>
+                      <td><?php echo $amount; ?></td>
+                      <td><?php echo $paymentType; ?></td>
+                      <td><?php echo $date; ?></td>
+                    </tr> 
+                    
+                <?php  $i++;
                   }
                 } else {
                   echo ' <div class="alert alert-warning font-weight-bold text-center mt-3">
@@ -71,9 +77,11 @@
            <tfoot>
              <tr>
                <th scope="col">No.</th>
-               <th scope="col">Name</th>
-               <th scope="col">Status</th>
-               <th scope="col">Action</th>
+               <th scope="col">Paymt. Id</th>
+               <th scope="col">User (User Id)</th>
+               <th scope="col">Amount</th>
+               <th scope="col">Type</th>
+               <th scope="col">Date</th>
              </tr>
            </tfoot>
          </table>
