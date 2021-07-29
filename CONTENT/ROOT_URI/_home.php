@@ -4,11 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
   <title>Coming Soon!</title>
   <style>
   body, html {
     height: 100%;
     margin: 0;
+    font-family: 'Padauk', sans-serif;
   }
   .bgimg {
     /*background-image: url('/assets/coming.jpg');*/
@@ -18,7 +22,7 @@
     background-size: cover;
     position: relative;
     color: white;
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Padauk', sans-serif;
     font-size: 25px;
   }
   .topleft {
