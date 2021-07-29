@@ -47,7 +47,7 @@ hr {
 }
 @media only screen and (max-width: 600px) {
   h1{
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
 }
 </style>
