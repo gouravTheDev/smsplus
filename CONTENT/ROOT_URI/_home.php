@@ -56,7 +56,7 @@ hr {
 
 <div class="bgimg">
   <div class="middle">
-    <img src="logo.png" style="height: 80px; margin-top: 15px; margin-bottom: 0px;">
+    <img src="/LOGOS/logo.png" style="height: 80px; margin-top: 15px; margin-bottom: 0px;">
     <h1>C O M I N G &nbsp; S O O N</h1>
     <hr>
   </div>
