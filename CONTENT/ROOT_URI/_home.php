@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
-</head>
-<style>
+  <style>
 body, html {
   height: 100%;
   margin: 0;
@@ -48,10 +47,12 @@ hr {
 }
 @media only screen and (max-width: 600px) {
   h1{
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 }
 </style>
+</head>
+
 <body>
 
 <div class="bgimg">
