@@ -1,6 +1,6 @@
 <?php 
 $lnk2 = explode('?', $lnk);
-print_r($lnk2);
+// print_r($lnk2);
 if ($_SESSION['LoggedIn']) {
 	include("_headerL.php");
 	if($lnk == "" || $lnk == "index") include("dashboard.php");
