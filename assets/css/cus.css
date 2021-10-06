@@ -1,0 +1,239 @@
+/*#topSection {
+    background-image: linear-gradient(to right top, #110c80, #1b1182, #221584, #291a86, #2f1e88, #322c91, #35399a, #3a46a2, #425db1, #5073be, #6189c9, #779fd3);
+    ;
+  }*/
+#topSection {
+  background: black;
+}
+
+.textShadow {
+  text-shadow: 4px 5px 2px #2a5feb;
+}
+
+.textShadowSm {
+  text-shadow: 4px 4px 2px #2a5feb;
+}
+
+.engIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.followerIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.longIcon {
+  height: 100%;
+}
+
+.engCard {
+  transition: transform 0.2s;
+}
+
+.engCard:hover {
+  background-color: #1195c8;
+
+  /*transform: scale(1.5);*/
+}
+
+.menus {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.menus2 {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.menuTitle {
+  color: #fff;
+}
+
+@media (min-width: 781px) {
+  #myVideo {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .iconText {
+    font-weight: bold;
+    margin-bottom: 10%;
+    -webkit-text-size-adjust: none;
+  }
+
+  #myVideo2 {
+    display: none;
+  }
+
+  .imgDiv {
+    text-align: center;
+  }
+
+  .socImage {
+    width: 400px;
+    height: 400px;
+  }
+
+  .imgMdl {
+    padding-top: 5%;
+  }
+
+  .headingWidth {
+    width: 300px;
+  }
+
+  .headingWidthanother {
+    width: 550px;
+  }
+}
+
+@media (max-width: 380px) {
+  .iconText {
+    font-size: 0.68em;
+    text-align: center;
+    -webkit-text-size-adjust: none;
+  }
+
+  .iconTextS {
+    font-size: 0.7em;
+    text-align: left;
+    -webkit-text-size-adjust: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .textShadow {
+    text-shadow: 4px 6px 5px #2a5feb;
+  }
+
+  .textShadowSm {
+    text-shadow: 4px 6px 4px #2a5feb;
+  }
+
+  .headingM {
+    font-size: 2.2em;
+  }
+
+  .card-body {
+    padding: 0.7rem;
+  }
+
+  .mainHeading {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 25px;
+  }
+
+  .longIcon {
+    height: 2.9em;
+    width: auto;
+    margin-top: 0px;
+  }
+
+  .iconText {
+    font-size: 0.76em;
+    text-align: center;
+    -webkit-text-size-adjust: none;
+  }
+
+  .iconTextS {
+    font-size: 0.8em;
+    text-align: left;
+    -webkit-text-size-adjust: none;
+  }
+
+  .engIcon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .followerIcon {
+    width: 100%;
+    height: 2.32em;
+  }
+
+  .menus {
+    height: 4.2em;
+    width: 4.2em;
+    border-radius: 50%;
+    margin-top: 2%;
+  }
+
+  .menus2 {
+    height: 3.6em;
+    width: 3.6em;
+    border-radius: 50%;
+    margin-top: 0;
+  }
+
+  .menus2 .card-body {
+    padding: 8px;
+  }
+
+  #myVideo {
+    display: none;
+  }
+
+  /*Mobile*/
+  #myVideo2 {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .sectionDiv {
+    margin: 40px 16px 20px;
+  }
+
+  .imgDiv {
+    text-align: center;
+  }
+
+  .socImage {
+    width: 230px;
+    height: 230px;
+  }
+
+  #heading {
+    font-size: 1.4em;
+    margin-top: 5%;
+  }
+
+  .headingWidth {
+    width: 180px;
+  }
+
+  .headingWidthanother {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .accessDiv {
+    padding-left: 0px;
+  }
+
+  .iconDiv {
+    padding-left: 2.3%;
+  }
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+p {
+  font-size: 1.2em;
+}

@@ -28,7 +28,7 @@
           <?php } ?>
             <li><a class="text-uppercase" style="font-weight: bold;" href="#">Affiliate Login</a></li>
             <li><a class="text-uppercase" style="font-weight: bold;" href="engagement-pods">Engagement Pods</a></li>
-            <li><a class="text-uppercase" style="font-weight: bold;" href="#">Services</a></li>
+            <li><a class="text-uppercase" style="font-weight: bold;" href="service">Services</a></li>
             <li><a class="text-uppercase" style="font-weight: bold;" href="#">How It Works</a></li>
 
         </ul>
